@@ -153,7 +153,7 @@ export function AnalysisPage() {
       <DotPattern className="top-32 left-12 hidden xl:block" />
       <DotPattern className="top-32 right-12 hidden xl:block" />
 
-      <div className="pt-44 md:pt-52 pb-20 md:pb-24 container-premium relative z-10">
+      <div className="container-premium relative z-10" style={{ paddingTop: "180px", paddingBottom: "100px" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           
           {/* Hero Section */}
