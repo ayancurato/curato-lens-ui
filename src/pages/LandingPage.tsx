@@ -226,7 +226,7 @@ export function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={stagger}
-                className="pt-4 text-left min-w-0 flex flex-col items-start gap-6 [&_*]:!m-0"
+                className="pt-4 text-left min-w-0 flex flex-col items-start gap-6"
               >
                 <motion.h1
                   variants={fadeUp}
@@ -234,10 +234,9 @@ export function LandingPage() {
                   className="text-5xl md:text-6xl lg:text-[4rem] leading-[1.05]"
                   style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
                 >
-                  <span className="flex items-center gap-3 font-bold mb-8 tracking-tight">
-                    <Sparkles className="w-10 h-10 shrink-0" style={{ color: "var(--color-teal)" }} />
-                    <span style={{ color: "var(--color-navy)" }}>Curato</span>
-                    <span style={{ color: "var(--color-teal)", marginLeft: "-4px" }}>Lens</span>
+                  <span className="flex items-center gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 font-bold mb-6 tracking-tight">
+                    <Sparkles className="w-10 h-10 text-blue-600 shrink-0" />
+                    Curato Lens
                   </span>
                   Brand<br />
                   Intelligence<br />
