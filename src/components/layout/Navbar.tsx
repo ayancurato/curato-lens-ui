@@ -19,7 +19,7 @@ export function Navbar() {
           <img 
             src="/logo.png" 
             alt="Curato Logo" 
-            className="h-10 object-contain mix-blend-multiply" 
+            className="h-16 object-contain mix-blend-multiply" 
           />
         </Link>
       </div>
