@@ -82,10 +82,10 @@ export function AuthPage() {
           <div className="w-full max-w-[440px] flex flex-col items-center mx-auto box-border">
             {/* Icon */}
             <div className="w-[84px] h-[84px] rounded-full bg-blue-50/50 flex items-center justify-center mb-8 relative">
-              <div className="w-[68px] h-[68px] rounded-full bg-blue-50 flex items-center justify-center relative shadow-sm border border-white">
-                <Mail className="w-8 h-8 text-slate-700" strokeWidth={1.5} />
-                <div className="absolute -bottom-1 -right-1 bg-teal-500 rounded-full p-[3px] border-2 border-white shadow-sm flex items-center justify-center">
-                  <ShieldCheck className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+              <div className="w-[68px] h-[68px] rounded-full bg-blue-50 flex items-center justify-center relative shadow-sm border border-white !m-0">
+                <Mail className="w-8 h-8 text-slate-700 !m-0" strokeWidth={1.5} />
+                <div className="absolute -bottom-1 -right-1 bg-teal-500 rounded-full p-[3px] border-2 border-white shadow-sm flex items-center justify-center !m-0">
+                  <ShieldCheck className="w-3.5 h-3.5 text-white !m-0" strokeWidth={3} />
                 </div>
               </div>
             </div>
