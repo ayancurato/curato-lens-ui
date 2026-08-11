@@ -216,11 +216,11 @@ export function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={stagger}
-                className="pt-4 text-left min-w-0"
+                className="pt-4 text-left min-w-0 flex flex-col items-start gap-6 [&_*]:!m-0"
               >
                 <motion.div variants={fadeUp} custom={0}>
                   <span
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider mb-6"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider"
                     style={{ background: "#F1F5F9", color: "var(--color-navy)" }}
                   >
                     <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--color-teal)" }} />
@@ -231,7 +231,7 @@ export function LandingPage() {
                 <motion.h1
                   variants={fadeUp}
                   custom={1}
-                  className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] mb-6"
+                  className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1]"
                   style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
                 >
                   AI Brand<br />
@@ -242,7 +242,7 @@ export function LandingPage() {
                 <motion.p
                   variants={fadeUp}
                   custom={2}
-                  className="text-lg md:text-xl max-w-[600px] leading-relaxed mb-8"
+                  className="text-lg md:text-xl max-w-[600px] leading-relaxed pb-2"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   Analyze any company's digital presence and receive a
@@ -270,17 +270,17 @@ export function LandingPage() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-                className="w-full max-w-xl mx-auto lg:ml-auto min-w-0"
+                className="w-full max-w-xl mx-auto lg:ml-auto min-w-0 [&_*]:!m-0"
               >
                 <div
-                  className="shadow-2xl"
+                  className="shadow-2xl flex flex-col gap-6"
                   style={{
                     padding: "2.5rem",
                     background: "var(--color-navy)",
                     borderRadius: "24px",
                   }}
                 >
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-4">
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                       style={{ background: "rgba(43, 182, 168, 0.15)" }}
@@ -288,7 +288,7 @@ export function LandingPage() {
                       <Sparkles className="w-6 h-6" style={{ color: "var(--color-teal)" }} />
                     </div>
                     <h3
-                      className="text-2xl md:text-3xl m-0"
+                      className="text-2xl md:text-3xl"
                       style={{ fontFamily: "var(--font-serif)", color: "#ffffff" }}
                     >
                       Analyze Your Brand
@@ -296,14 +296,14 @@ export function LandingPage() {
                   </div>
 
                   {company && (
-                    <div className="mb-6 bg-neutral-800/50 border border-neutral-700/50 rounded-xl p-4 flex justify-between items-center text-sm">
+                    <div className="bg-neutral-800/50 border border-neutral-700/50 rounded-xl p-4 flex justify-between items-center text-sm">
                       <div>
-                        <p className="text-neutral-400 m-0">Company</p>
-                        <p className="font-medium text-white m-0 capitalize">{company.domain.split('.')[0]}</p>
+                        <p className="text-neutral-400">Company</p>
+                        <p className="font-medium text-white capitalize">{company.domain.split('.')[0]}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-neutral-400 m-0">Audits Remaining</p>
-                        <p className="font-medium text-white m-0">
+                        <p className="text-neutral-400">Audits Remaining</p>
+                        <p className="font-medium text-white">
                           {Math.max(0, company.free_audits_total - company.free_audits_used)} of {company.free_audits_total}
                         </p>
                       </div>
@@ -311,9 +311,9 @@ export function LandingPage() {
                   )}
 
                   {isExhausted ? (
-                    <div className="text-center py-8">
-                      <p className="text-xl text-white mb-2">Your {company?.free_audits_total} free audits have been used.</p>
-                      <p className="text-neutral-400 mb-6">Want deeper intelligence and additional audits for your company?</p>
+                    <div className="text-center py-8 flex flex-col gap-4">
+                      <p className="text-xl text-white">Your {company?.free_audits_total} free audits have been used.</p>
+                      <p className="text-neutral-400 pb-2">Want deeper intelligence and additional audits for your company?</p>
                       <button className="bg-white text-neutral-900 font-medium px-6 py-3 rounded-xl hover:bg-neutral-100 transition-colors w-full">
                         Talk to Curato
                       </button>
