@@ -254,8 +254,8 @@ export function LandingPage() {
                   className="text-lg md:text-xl max-w-[600px] leading-relaxed pb-2"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
-                  Analyze any company's digital presence and receive a
-                  comprehensive <span style={{ color: "var(--color-teal)" }}>AI-powered intelligence</span> report in minutes.
+                  Analyze your company's digital presence and receive a
+                  comprehensive <span style={{ color: "var(--color-teal)" }}>Brand intelligence</span> report in minutes.
                 </motion.p>
 
                 <motion.div
