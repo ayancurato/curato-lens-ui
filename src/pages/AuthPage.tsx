@@ -69,7 +69,7 @@ export function AuthPage() {
         <DotPattern />
       </div>
 
-      <div className="relative z-10 w-full max-w-[640px] flex flex-col items-center mx-auto px-4">
+      <div className="relative z-10 w-full max-w-[760px] flex flex-col items-center mx-auto px-4">
         {/* Branding */}
         <div className="flex items-center gap-2.5 mb-8">
           <Sparkles className="w-7 h-7 text-blue-600" fill="currentColor" />
@@ -77,7 +77,7 @@ export function AuthPage() {
         </div>
 
         {/* Card */}
-        <div className="w-full bg-white rounded-3xl p-6 sm:px-14 sm:py-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center box-border">
+        <div className="w-full bg-white rounded-3xl p-6 sm:px-24 sm:py-14 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center box-border">
           
           {/* Icon */}
           <div className="w-[84px] h-[84px] rounded-full bg-blue-50/50 flex items-center justify-center mb-8 relative">
