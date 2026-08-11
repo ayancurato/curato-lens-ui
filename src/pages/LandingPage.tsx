@@ -228,22 +228,16 @@ export function LandingPage() {
                 variants={stagger}
                 className="pt-4 text-left min-w-0 flex flex-col items-start gap-6 [&_*]:!m-0"
               >
-                <motion.div variants={fadeUp} custom={0}>
-                  <span
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider"
-                    style={{ background: "#F1F5F9", color: "var(--color-navy)" }}
-                  >
-                    <Sparkles className="w-3.5 h-3.5" style={{ color: "var(--color-teal)" }} />
-                    AI-POWERED INTELLIGENCE
-                  </span>
-                </motion.div>
-
                 <motion.h1
                   variants={fadeUp}
                   custom={1}
-                  className="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1]"
+                  className="text-5xl md:text-6xl lg:text-[4rem] leading-[1.05]"
                   style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
                 >
+                  <span className="flex items-center gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 font-bold mb-4 tracking-tight">
+                    <Sparkles className="w-10 h-10 text-blue-600 shrink-0" />
+                    Curato Lens
+                  </span>
                   AI Brand<br />
                   Intelligence<br />
                   <span style={{ color: "var(--color-teal)" }}>Platform</span>
