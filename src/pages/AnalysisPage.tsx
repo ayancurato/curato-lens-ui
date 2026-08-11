@@ -161,10 +161,10 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-10 md:mb-14"
+            className="flex flex-col items-center justify-center text-center mb-10 md:mb-14"
           >
             <h1
-              className="text-4xl md:text-5xl leading-tight font-bold mb-4 tracking-tight"
+              className="w-full text-center text-4xl md:text-5xl leading-tight font-bold mb-4 tracking-tight"
               style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
             >
               {isCompleted
@@ -173,7 +173,7 @@ export function AnalysisPage() {
                   ? "Analysis Failed"
                   : "Our AI agents are working on your report."}
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-medium" style={{ color: "var(--color-text-secondary)" }}>
+            <p className="w-full text-center text-lg md:text-xl leading-relaxed max-w-3xl font-medium" style={{ color: "var(--color-text-secondary)" }}>
               {isCompleted
                 ? "Your intelligence report is ready."
                 : isFailed
