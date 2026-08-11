@@ -71,7 +71,7 @@ export function AuthPage() {
 
       <div className="relative z-10 w-full max-w-[760px] flex flex-col items-center mx-auto px-4">
         {/* Branding */}
-        <div className="flex items-center gap-2.5 mb-8">
+        <div className="flex items-center gap-2.5 mb-[42px]">
           <Sparkles className="w-7 h-7 text-blue-600" fill="currentColor" />
           <h1 className="text-4xl font-serif font-bold text-slate-900 tracking-tight">Curato <span className="text-teal-700 font-normal">Lens</span></h1>
         </div>
