@@ -33,22 +33,23 @@ import { useEffect, useState } from "react";
 
 /* ── Form Schema ─────────────────────────────────────────────────────── */
 
-const ensureProtocol = (val: string) => {
-  if (val && val.trim() !== "") {
-    if (!/^https?:\/\//i.test(val)) {
-      return `https://${val.trim()}`;
-    }
+const ensureProtocol = (val: string | undefined) => {
+  if (!val) return val;
+  const trimmed = val.trim();
+  if (trimmed === "") return trimmed;
+  if (!/^https?:\/\//i.test(trimmed)) {
+    return `https://${trimmed}`;
   }
-  return val;
+  return trimmed;
 };
 
 const schema = z.object({
   website_url: z.string().transform(ensureProtocol).pipe(z.string().url("Please enter a valid website URL")),
-  linkedin_url: z.string().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
-  instagram_url: z.string().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
-  twitter_url: z.string().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
-  facebook_url: z.string().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
-  youtube_url: z.string().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  linkedin_url: z.string().optional().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  instagram_url: z.string().optional().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  twitter_url: z.string().optional().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  facebook_url: z.string().optional().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  youtube_url: z.string().optional().transform(ensureProtocol).pipe(z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
 });
 
 type FormValues = z.infer<typeof schema>;
