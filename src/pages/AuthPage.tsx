@@ -77,10 +77,10 @@ export function AuthPage() {
         </div>
 
         {/* Card */}
-        <div className="w-full bg-white rounded-3xl p-8 sm:px-[72px] sm:py-[50px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center">
+        <div className="w-full bg-white rounded-3xl p-6 sm:px-14 sm:py-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center box-border">
           
           {/* Icon */}
-          <div className="w-[84px] h-[84px] rounded-full bg-blue-50/50 flex items-center justify-center mb-6 relative">
+          <div className="w-[84px] h-[84px] rounded-full bg-blue-50/50 flex items-center justify-center mb-8 relative">
             <div className="w-[68px] h-[68px] rounded-full bg-blue-50 flex items-center justify-center relative shadow-sm border border-white">
               <Mail className="w-8 h-8 text-slate-700" strokeWidth={1.5} />
               <div className="absolute -bottom-1 -right-1 bg-teal-500 rounded-full p-[3px] border-2 border-white shadow-sm flex items-center justify-center">
@@ -89,26 +89,26 @@ export function AuthPage() {
             </div>
           </div>
 
-          <h2 className="text-[28px] font-serif font-bold text-slate-900 mb-3 text-center tracking-tight">Verify your email</h2>
-          <p className="text-slate-500 text-[15px] mb-8 text-center max-w-sm leading-relaxed">
+          <h2 className="text-[28px] font-serif font-bold text-slate-900 mb-4 text-center tracking-tight">Verify your email</h2>
+          <p className="text-slate-500 text-[15px] mb-10 text-center max-w-sm leading-relaxed">
             We've sent a verification code to your work email<br className="hidden sm:block" />to help secure your account.
           </p>
 
-          <div className="w-full">
+          <div className="w-full box-border">
             {step === "email" ? (
-              <form onSubmit={handleSendCode} className="space-y-6 w-full">
-                <div className="space-y-2">
+              <form onSubmit={handleSendCode} className="space-y-4 w-full">
+                <div className="space-y-2.5">
                   <label className="block text-[13px] font-bold text-slate-800 tracking-wide">Work Email</label>
-                  <div className="relative">
+                  <div className="relative box-border">
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full h-[56px] bg-white border border-slate-200 rounded-xl px-4 text-slate-900 text-[15px] focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium placeholder:text-slate-400"
+                      className="w-full h-[64px] box-border bg-white border border-slate-200 rounded-xl px-6 text-slate-900 text-[15px] focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium placeholder:text-slate-400"
                       placeholder="name@company.com"
                       required
                     />
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    <div className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400">
                       <Edit3 className="w-[18px] h-[18px]" strokeWidth={2} />
                     </div>
                   </div>
@@ -119,22 +119,22 @@ export function AuthPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-[56px] bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-[0_4px_14px_0_rgb(37,99,235,0.39)] disabled:opacity-50 disabled:shadow-none flex items-center justify-center gap-2.5 text-[15px]"
+                  className="w-full h-[64px] box-border bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-[0_4px_14px_0_rgb(37,99,235,0.39)] disabled:opacity-50 disabled:shadow-none flex items-center justify-center gap-2.5 text-[15px] mt-4"
                 >
                   {loading ? "Sending..." : "Send verification code"}
                   <Send className="w-4 h-4" strokeWidth={2} />
                 </button>
               </form>
             ) : (
-              <form onSubmit={handleVerifyCode} className="space-y-6 w-full">
-                <div className="space-y-2">
+              <form onSubmit={handleVerifyCode} className="space-y-4 w-full">
+                <div className="space-y-2.5">
                   <label className="block text-[13px] font-bold text-slate-800 tracking-wide">Verification Code</label>
-                  <div className="relative">
+                  <div className="relative box-border">
                     <input
                       type="text"
                       value={otp}
                       onChange={(e) => setOtp(e.target.value)}
-                      className="w-full h-[56px] bg-white border border-slate-200 rounded-xl px-4 text-slate-900 text-[15px] focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-center tracking-widest placeholder:text-slate-400"
+                      className="w-full h-[64px] box-border bg-white border border-slate-200 rounded-xl px-6 text-slate-900 text-[15px] focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-center tracking-widest placeholder:text-slate-400"
                       placeholder="000000"
                       required
                     />
@@ -146,14 +146,14 @@ export function AuthPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-[56px] bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-[0_4px_14px_0_rgb(37,99,235,0.39)] disabled:opacity-50 disabled:shadow-none flex items-center justify-center gap-2.5 text-[15px]"
+                  className="w-full h-[64px] box-border bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-[0_4px_14px_0_rgb(37,99,235,0.39)] disabled:opacity-50 disabled:shadow-none flex items-center justify-center gap-2.5 text-[15px] mt-4"
                 >
                   {loading ? "Verifying..." : "Verify"}
                 </button>
               </form>
             )}
             
-            <div className="mt-8 flex items-center justify-center gap-2 text-slate-400">
+            <div className="mt-5 mb-2 flex items-center justify-center gap-2 text-slate-400">
               <Lock className="w-[14px] h-[14px]" />
               <p className="text-[13px]">Your information is secure and will never be shared.</p>
             </div>
