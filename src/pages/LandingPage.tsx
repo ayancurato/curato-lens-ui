@@ -238,9 +238,7 @@ export function LandingPage() {
                     <Sparkles className="w-10 h-10 text-blue-600 shrink-0" />
                     Curato Lens
                   </span>
-                  Brand<br />
-                  Intelligence<br />
-                  <span style={{ color: "var(--color-teal)" }}>Platform</span>
+                  Brand<br />Intelligence<br /><span style={{ color: "var(--color-teal)" }}>Platform</span>
                 </motion.h1>
 
                 <motion.p
