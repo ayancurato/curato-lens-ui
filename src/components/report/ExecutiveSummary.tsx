@@ -13,15 +13,11 @@ export function ExecutiveSummary({ text, strengths, weaknesses, overallScore }: 
   if (!text) return null;
 
   const topStrengths = (strengths || []).filter(s => {
-    if (typeof s === "string") return s.trim().length > 0;
-    if (typeof s === "object") return s && s.title && s.title.trim().length > 0;
-    return false;
+    return s && s.title && s.title.trim().length > 0;
   }).slice(0, 3);
 
   const topWeaknesses = (weaknesses || []).filter(w => {
-    if (typeof w === "string") return w.trim().length > 0;
-    if (typeof w === "object") return w && w.title && w.title.trim().length > 0;
-    return false;
+    return w && w.title && w.title.trim().length > 0;
   }).slice(0, 3);
 
   const getHealthStatus = (s: number) => {

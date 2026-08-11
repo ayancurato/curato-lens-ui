@@ -115,7 +115,7 @@ export function ReportPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <AIConsultantInsights 
               insights={meta.ai_insights as any[] | undefined} 
-              categoryScores={scores?.category_scores}
+              categoryScores={scores?.category_scores || undefined}
             />
           </motion.div>
         </div>
