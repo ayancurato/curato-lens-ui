@@ -33,13 +33,22 @@ import { useEffect, useState } from "react";
 
 /* ── Form Schema ─────────────────────────────────────────────────────── */
 
+const ensureProtocol = (val: unknown) => {
+  if (typeof val === "string" && val.trim() !== "") {
+    if (!/^https?:\/\//i.test(val)) {
+      return `https://${val.trim()}`;
+    }
+  }
+  return val;
+};
+
 const schema = z.object({
-  website_url: z.string().url("Please enter a valid website URL"),
-  linkedin_url: z.string().url("Please enter a valid URL").or(z.literal("")).optional(),
-  instagram_url: z.string().url("Please enter a valid URL").or(z.literal("")).optional(),
-  twitter_url: z.string().url("Please enter a valid URL").or(z.literal("")).optional(),
-  facebook_url: z.string().url("Please enter a valid URL").or(z.literal("")).optional(),
-  youtube_url: z.string().url("Please enter a valid URL").or(z.literal("")).optional(),
+  website_url: z.preprocess(ensureProtocol, z.string().url("Please enter a valid website URL")),
+  linkedin_url: z.preprocess(ensureProtocol, z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  instagram_url: z.preprocess(ensureProtocol, z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  twitter_url: z.preprocess(ensureProtocol, z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  facebook_url: z.preprocess(ensureProtocol, z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
+  youtube_url: z.preprocess(ensureProtocol, z.string().url("Please enter a valid URL").or(z.literal("")).optional()),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -315,8 +324,8 @@ export function LandingPage() {
                       </label>
                       <input
                         {...register("website_url")}
-                        type="url"
-                        placeholder="https://example.com"
+                        type="text"
+                        placeholder="example.com"
                         style={{ width: "100%", fontSize: "15px", border: "none", outline: "none", background: "transparent", color: "var(--color-navy)", fontWeight: 500, padding: 0 }}
                         disabled={isLoading}
                       />
@@ -342,7 +351,7 @@ export function LandingPage() {
                           </label>
                           <input
                             {...register(field.name)}
-                            type="url"
+                            type="text"
                             placeholder={field.placeholder}
                             style={{ width: "100%", fontSize: "15px", border: "none", outline: "none", background: "transparent", color: "var(--color-navy)", fontWeight: 500, padding: 0 }}
                             disabled={isLoading}
@@ -364,7 +373,7 @@ export function LandingPage() {
                       </label>
                       <input
                         {...register("youtube_url")}
-                        type="url"
+                        type="text"
                         placeholder="YouTube URL"
                         style={{ width: "100%", fontSize: "15px", border: "none", outline: "none", background: "transparent", color: "var(--color-navy)", fontWeight: 500, padding: 0 }}
                         disabled={isLoading}
