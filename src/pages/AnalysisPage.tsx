@@ -250,10 +250,9 @@ export function AnalysisPage() {
                 </div>
               </div>
 
-              {/* Progress Bar (Absolute Bottom) */}
               <div className="absolute bottom-0 left-0 right-0 h-2 bg-slate-100 overflow-hidden">
                 <motion.div
-                  className="h-full relative"
+                  className="h-full relative !m-0"
                   style={{ background: "linear-gradient(90deg, var(--color-teal), #4fd1c5, var(--color-teal))", backgroundSize: "200% 100%" }}
                   initial={{ width: "0%" }}
                   animate={{ 

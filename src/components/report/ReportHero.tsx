@@ -30,7 +30,7 @@ export function ReportHero({ companyName, overallScore, categoryScores, executiv
   const status = getStatus(overallScore);
 
   return (
-    <section className="pt-40 md:pt-48">
+    <section style={{ paddingTop: "180px" }}>
       <div className="container-premium max-w-[1280px]">
         <div className="bg-white rounded-[24px] border border-[var(--color-border-light)] p-8 md:p-12 shadow-[var(--shadow-card)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
