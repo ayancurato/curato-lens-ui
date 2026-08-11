@@ -77,9 +77,9 @@ export function AuthPage() {
         </div>
 
         {/* Card */}
-        <div className="w-full bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center box-border">
+        <div className="w-full bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center box-border [&_*]:m-[10px]">
           
-          <div className="w-full max-w-[440px] flex flex-col items-center mx-auto box-border">
+          <div className="w-full flex flex-col items-center mx-auto box-border">
             {/* Icon */}
             <div className="w-[84px] h-[84px] rounded-full bg-blue-50/50 flex items-center justify-center mb-8 relative">
               <div className="w-[68px] h-[68px] rounded-full bg-blue-50 flex items-center justify-center relative shadow-sm border border-white !m-0">
