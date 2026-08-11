@@ -295,20 +295,7 @@ export function LandingPage() {
                     </h3>
                   </div>
 
-                  {company && (
-                    <div className="bg-neutral-800/50 border border-neutral-700/50 rounded-xl p-4 flex justify-between items-center text-sm">
-                      <div>
-                        <p className="text-neutral-400">Company</p>
-                        <p className="font-medium text-white capitalize">{company.domain.split('.')[0]}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-neutral-400">Audits Remaining</p>
-                        <p className="font-medium text-white">
-                          {Math.max(0, company.free_audits_total - company.free_audits_used)} of {company.free_audits_total}
-                        </p>
-                      </div>
-                    </div>
-                  )}
+
 
                   {isExhausted ? (
                     <div className="text-center py-8 flex flex-col gap-4">
