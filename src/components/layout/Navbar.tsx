@@ -13,23 +13,14 @@ export function Navbar() {
         borderBottom: "1px solid rgba(226, 232, 240, 0.5)",
       }}
     >
-      <div className="w-full px-12 md:px-20 lg:px-28 flex items-center h-[120px]">
+      <div className="w-full px-12 md:px-20 lg:px-28 flex items-center h-[80px]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-0 group">
+        <Link to="/" className="flex items-center group">
           <img 
             src="/logo.png" 
             alt="Curato Logo" 
-            className="h-28 object-contain mix-blend-multiply" 
+            className="h-10 object-contain mix-blend-multiply" 
           />
-          <span
-            className="text-2xl tracking-tight mt-3"
-            style={{
-              fontFamily: "var(--font-serif)",
-              color: "var(--color-navy)",
-            }}
-          >
-            Lens
-          </span>
         </Link>
       </div>
     </motion.nav>
