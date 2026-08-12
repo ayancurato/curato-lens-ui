@@ -440,7 +440,7 @@ export function LandingPage() {
       </section>
 
       {/* ── FEATURES ─────────────────────────────────────────────────── */}
-      <section id="features" className="relative block w-full bg-slate-50/30" style={{ paddingTop: "80px", paddingBottom: "160px" }}>
+      <section id="features" className="relative block w-full bg-slate-50/30" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
         <div className="w-full">
           <motion.div
             initial="hidden"
@@ -518,7 +518,7 @@ export function LandingPage() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────────────────── */}
-      <section id="how-it-works" className="relative block w-full bg-white" style={{ paddingTop: "128px", paddingBottom: "96px" }}>
+      <section id="how-it-works" className="relative block w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "96px" }}>
         
         {/* Decorative dots top-left */}
         <div className="absolute top-16 left-8 lg:left-16 opacity-40 hidden md:block z-0">
