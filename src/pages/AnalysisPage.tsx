@@ -161,10 +161,10 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center justify-center text-center mt-6 md:mt-0 mb-6 md:mb-14"
+            className="flex flex-col items-center justify-center text-center mt-6 md:mt-0 mb-10 md:mb-14"
           >
             <h1
-              className="w-full text-center text-[38px] leading-[1.1] md:text-5xl md:leading-tight font-bold mb-4 tracking-tight"
+              className="w-full text-center text-[38px] leading-[1.1] md:text-5xl md:leading-tight font-bold mb-6 tracking-tight"
               style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
             >
               {isCompleted
@@ -217,7 +217,7 @@ export function AnalysisPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 mb-8 relative overflow-hidden"
+              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 pb-8 md:pb-8 mb-8 max-sm:mb-10 relative overflow-hidden"
             >
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 relative z-10">
                 {/* Left: Icon */}
@@ -275,7 +275,7 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="md:bg-white md:rounded-[1.5rem] md:shadow-sm md:border md:border-gray-100 md:p-8 md:px-12 md:py-10 mb-8 relative md:overflow-hidden"
+            className="md:bg-white md:rounded-[1.5rem] md:shadow-sm md:border md:border-gray-100 md:p-8 md:px-12 md:py-10 mb-8 max-sm:mb-12 relative md:overflow-hidden"
           >
             <div className="relative">
               {/* Vertical Connecting Line */}
