@@ -77,11 +77,11 @@ export function AuthPage() {
         </div>
 
         {/* Card */}
-        <div className="w-full bg-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center box-border sm:[&_*]:m-[10px]">
+        <div className="w-full bg-white rounded-3xl p-8 sm:p-12 md:p-16 max-sm:pt-12 max-sm:pb-14 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex flex-col items-center box-border sm:[&_*]:m-[10px]">
           
           <div className="w-full flex flex-col items-center mx-auto box-border">
             {/* Icon */}
-            <div className="w-[84px] h-[84px] rounded-full bg-blue-50/50 flex items-center justify-center mb-8 relative">
+            <div className="w-[84px] h-[84px] rounded-full bg-blue-50/50 flex items-center justify-center mb-8 max-sm:mb-10 relative">
               <div className="w-[68px] h-[68px] rounded-full bg-blue-50 flex items-center justify-center relative shadow-sm border border-white !m-0">
                 <Mail className="w-8 h-8 text-slate-700 !m-0" strokeWidth={1.5} />
                 <div className="absolute -bottom-1 -right-1 bg-teal-500 rounded-full p-[3px] border-2 border-white shadow-sm flex items-center justify-center !m-0">
@@ -90,12 +90,12 @@ export function AuthPage() {
               </div>
             </div>
 
-            <h2 className="text-[28px] font-serif font-bold text-slate-900 mb-4 text-center tracking-tight">Verify your email</h2>
-            <p className="text-slate-500 text-[15px] mb-10 text-center leading-relaxed">
+            <h2 className="text-[28px] font-serif font-bold text-slate-900 mb-4 max-sm:mb-6 text-center tracking-tight">Verify your email</h2>
+            <p className="text-slate-500 text-[15px] mb-10 max-sm:mb-12 text-center leading-relaxed">
               We've sent a verification code to your work email <br className="hidden sm:block" />to help secure your account.
             </p>
 
-            <div className="w-full max-sm:w-[90%] box-border">
+            <div className="w-full box-border">
               {step === "email" ? (
                 <form onSubmit={handleSendCode} className="space-y-4 w-full">
                   <div className="space-y-2.5">
@@ -147,14 +147,14 @@ export function AuthPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full h-[64px] box-border bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-[0_4px_14px_0_rgb(37,99,235,0.39)] disabled:opacity-50 disabled:shadow-none flex items-center justify-center gap-2.5 text-[15px] mt-4"
+                    className="w-full h-[64px] box-border bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-[0_4px_14px_0_rgb(37,99,235,0.39)] disabled:opacity-50 disabled:shadow-none flex items-center justify-center gap-2.5 text-[15px] mt-4 max-sm:mt-8"
                   >
                     {loading ? "Verifying..." : "Verify"}
                   </button>
                 </form>
               )}
               
-              <div className="mt-8 mb-2 flex items-start sm:items-center justify-center gap-2 text-slate-400 max-sm:pb-8">
+              <div className="mt-8 max-sm:mt-12 mb-2 flex items-start sm:items-center justify-center gap-2 text-slate-400 max-sm:pb-8">
                 <Lock className="w-[14px] h-[14px] mt-[2px] sm:mt-0 flex-shrink-0" />
                 <p className="text-[13px] leading-snug sm:leading-normal">Your information is secure and will never be shared.</p>
               </div>
