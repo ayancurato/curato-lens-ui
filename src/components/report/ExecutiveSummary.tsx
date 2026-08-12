@@ -33,7 +33,7 @@ export function ExecutiveSummary({ text, strengths, weaknesses, overallScore }: 
   return (
     <div className="bg-white rounded-[24px] shadow-[var(--shadow-card)] border border-[var(--color-border-light)] px-6 md:px-8 pt-8 md:pt-10 pb-8 md:pb-10">
       <div className="mb-5 md:mb-6">
-        <h3 className="text-xs font-bold uppercase tracking-widest mb-3 md:mb-4" style={{ color: "var(--color-teal)" }}>
+        <h3 className="text-xs font-bold uppercase tracking-widest mb-3 max-sm:mb-6 md:mb-4" style={{ color: "var(--color-teal)" }}>
           Overall Assessment
         </h3>
         <div className="flex items-center gap-3">
@@ -49,15 +49,15 @@ export function ExecutiveSummary({ text, strengths, weaknesses, overallScore }: 
         </div>
       </div>
 
-      <div className="mb-8 md:mb-10 max-w-4xl">
+      <div className="mb-8 max-sm:mb-12 md:mb-10 max-w-4xl">
         <p className="text-base md:text-lg leading-relaxed whitespace-pre-line text-[var(--color-text-secondary)]">
           {text}
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 md:gap-8 p-6 md:p-8 rounded-[16px] border border-[var(--color-border-light)] bg-[#fafafa]/50">
+      <div className="grid md:grid-cols-2 gap-10 md:gap-8 p-6 md:p-8 rounded-[16px] border border-[var(--color-border-light)] bg-[#fafafa]/50">
         <div>
-          <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-5" style={{ color: "var(--color-teal-dark)" }}>
+          <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-5 max-sm:mb-8" style={{ color: "var(--color-teal-dark)" }}>
             <CheckCircle2 className="w-4 h-4" /> Top Strengths
           </h4>
           {topStrengths.length > 0 ? (
@@ -78,7 +78,7 @@ export function ExecutiveSummary({ text, strengths, weaknesses, overallScore }: 
         </div>
 
         <div>
-          <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-5" style={{ color: "#e11d48" }}>
+          <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-5 max-sm:mb-8" style={{ color: "#e11d48" }}>
             <AlertTriangle className="w-4 h-4" /> Key Areas to Improve
           </h4>
           {topWeaknesses.length > 0 ? (

@@ -91,7 +91,7 @@ export function ReportPage() {
       <Navbar />
 
       {/* 1. HERO (Includes Overall Score, Title, Summary, Radar) */}
-      <div className="mb-14 md:mb-20">
+      <div className="mb-0 max-sm:mb-12 relative z-20">
         <ReportHero 
           companyName={meta.company_name || meta.domain || "Brand Intelligence Report"} 
           overallScore={overallScore} 
@@ -101,7 +101,7 @@ export function ReportPage() {
       </div>
 
       {/* 2. OVERALL ASSESSMENT */}
-      <section className="mb-16 md:mb-20">
+      <section className="mb-16 md:mb-20 max-sm:mb-24 relative z-10">
         <div className="container-premium max-w-[1280px]">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <ExecutiveSummary text={meta.executive_summary} strengths={meta.strengths} weaknesses={meta.weaknesses} overallScore={overallScore} />
@@ -110,7 +110,7 @@ export function ReportPage() {
       </section>
 
       {/* 3. AI CONSULTANT INSIGHTS */}
-      <section className="mb-16 md:mb-20">
+      <section className="mb-16 md:mb-20 max-sm:mb-24 relative z-0 max-sm:mt-8">
         <div className="container-premium max-w-[1280px]">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <AIConsultantInsights 
