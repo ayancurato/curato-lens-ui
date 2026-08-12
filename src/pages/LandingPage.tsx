@@ -400,10 +400,6 @@ export function LandingPage() {
                       </div>
                     )}
 
-                    {/* Disclaimer Text */}
-                    <p className="text-sm font-medium mt-1 mb-1 text-center" style={{ color: "#F87171" }}>
-                      This free audit can only be used for your verified company website.
-                    </p>
 
                     {/* Submit */}
                     <button
