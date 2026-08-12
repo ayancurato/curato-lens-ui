@@ -161,10 +161,10 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center justify-center text-center mb-10 md:mb-14"
+            className="flex flex-col items-center justify-center text-center mt-6 md:mt-0 mb-6 md:mb-14"
           >
             <h1
-              className="w-full text-center text-4xl md:text-5xl leading-tight font-bold mb-4 tracking-tight"
+              className="w-full text-center text-[38px] leading-[1.1] md:text-5xl md:leading-tight font-bold mb-4 tracking-tight"
               style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
             >
               {isCompleted
@@ -217,7 +217,7 @@ export function AnalysisPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-8 relative overflow-hidden"
+              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 mb-8 relative overflow-hidden"
             >
               <div className="flex items-center justify-between gap-6 relative z-10">
                 {/* Left: Icon */}
@@ -275,7 +275,7 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="bg-white rounded-[1.5rem] shadow-sm border border-gray-100 p-8 md:px-12 md:py-10 mb-8 relative overflow-hidden"
+            className="md:bg-white md:rounded-[1.5rem] md:shadow-sm md:border md:border-gray-100 md:p-8 md:px-12 md:py-10 mb-8 relative md:overflow-hidden"
           >
             <div className="relative">
               {/* Vertical Connecting Line */}
@@ -297,8 +297,8 @@ export function AnalysisPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.08, duration: 0.4 }}
-                      className={`flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 py-8 md:py-10 ${
-                        !isLast ? "border-b border-gray-50" : ""
+                      className={`flex flex-row items-start md:items-center gap-4 md:gap-6 py-5 md:py-10 bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 mb-3 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:p-0 md:mb-0 ${
+                        !isLast ? "md:border-b md:border-gray-50" : ""
                       }`}
                     >
                       {/* Step number (Left) */}
@@ -335,58 +335,102 @@ export function AnalysisPage() {
                       </div>
 
                       {/* Content: Title & Subtitle */}
-                      <div className="flex-grow min-w-0 pr-4 pt-1 sm:pt-0">
-                        <h4 
-                          className="text-base font-semibold mb-2"
-                          style={{ color: isActive || isDone ? "var(--color-navy)" : "#475569" }}
-                        >
-                          {step.title}
-                        </h4>
-                        <p className="text-[15px] text-gray-500/90 font-medium leading-relaxed">
-                          {step.subtitle}
-                        </p>
-                      </div>
+                      <div className="flex-grow min-w-0 flex flex-col md:flex-row md:items-center">
+                        <div className="flex-grow min-w-0 pr-0 md:pr-4 pt-1 md:pt-0">
+                          <h4 
+                            className="text-base font-semibold mb-1 md:mb-2"
+                            style={{ color: isActive || isDone ? "var(--color-navy)" : "#475569" }}
+                          >
+                            {step.title}
+                          </h4>
+                          <p className="text-[15px] text-gray-500/90 font-medium leading-relaxed">
+                            {step.subtitle}
+                          </p>
+                          
+                          {/* Status Pill & Indicator (MOBILE ONLY) */}
+                          <div className="flex items-center gap-5 mt-3 md:hidden">
+                            {isDone ? (
+                              <>
+                                <div 
+                                  className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold bg-gray-50/80"
+                                  style={{ color: "#64748b" }}
+                                >
+                                  Completed
+                                </div>
+                                <Check className="w-[1.15rem] h-[1.15rem]" style={{ color: "var(--color-teal)" }} />
+                              </>
+                            ) : isActive ? (
+                              <>
+                                <div 
+                                  className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
+                                  style={{ background: "rgba(43, 182, 168, 0.12)", color: "var(--color-teal-dark)" }}
+                                >
+                                  In progress
+                                </div>
+                                <motion.div
+                                  animate={{ rotate: 360 }}
+                                  transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                                >
+                                  <Loader2 className="w-[1.15rem] h-[1.15rem]" style={{ color: "var(--color-teal)" }} />
+                                </motion.div>
+                              </>
+                            ) : (
+                              <>
+                                <div 
+                                  className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
+                                  style={{ background: "#F1F5F9", color: "#94a3b8" }}
+                                >
+                                  Pending
+                                </div>
+                                <div className="w-[1.15rem] h-[1.15rem] flex items-center justify-center">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        </div>
 
-                      {/* Status Pill & Indicator (Right) */}
-                      <div className="flex items-center gap-5 sm:flex-shrink-0 mt-3 sm:mt-0">
-                        {isDone ? (
-                          <>
-                            <div 
-                              className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold bg-gray-50/80"
-                              style={{ color: "#64748b" }}
-                            >
-                              Completed
-                            </div>
-                            <Check className="w-[1.15rem] h-[1.15rem]" style={{ color: "var(--color-teal)" }} />
-                          </>
-                        ) : isActive ? (
-                          <>
-                            <div 
-                              className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
-                              style={{ background: "rgba(43, 182, 168, 0.12)", color: "var(--color-teal-dark)" }}
-                            >
-                              In progress
-                            </div>
-                            <motion.div
-                              animate={{ rotate: 360 }}
-                              transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-                            >
-                              <Loader2 className="w-[1.15rem] h-[1.15rem]" style={{ color: "var(--color-teal)" }} />
-                            </motion.div>
-                          </>
-                        ) : (
-                          <>
-                            <div 
-                              className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
-                              style={{ background: "#F1F5F9", color: "#94a3b8" }}
-                            >
-                              Pending
-                            </div>
-                            <div className="w-[1.15rem] h-[1.15rem] flex items-center justify-center">
-                              <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                            </div>
-                          </>
-                        )}
+                        {/* Status Pill & Indicator (DESKTOP ONLY) */}
+                        <div className="hidden md:flex items-center gap-5 flex-shrink-0 mt-3 md:mt-0">
+                          {isDone ? (
+                            <>
+                              <div 
+                                className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold bg-gray-50/80"
+                                style={{ color: "#64748b" }}
+                              >
+                                Completed
+                              </div>
+                              <Check className="w-[1.15rem] h-[1.15rem]" style={{ color: "var(--color-teal)" }} />
+                            </>
+                          ) : isActive ? (
+                            <>
+                              <div 
+                                className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
+                                style={{ background: "rgba(43, 182, 168, 0.12)", color: "var(--color-teal-dark)" }}
+                              >
+                                In progress
+                              </div>
+                              <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                              >
+                                <Loader2 className="w-[1.15rem] h-[1.15rem]" style={{ color: "var(--color-teal)" }} />
+                              </motion.div>
+                            </>
+                          ) : (
+                            <>
+                              <div 
+                                className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
+                                style={{ background: "#F1F5F9", color: "#94a3b8" }}
+                              >
+                                Pending
+                              </div>
+                              <div className="w-[1.15rem] h-[1.15rem] flex items-center justify-center">
+                                <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                              </div>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </motion.div>
                   );
@@ -400,7 +444,7 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="rounded-[1.25rem] p-5 sm:p-6 flex items-start sm:items-center gap-4 relative overflow-hidden"
+            className="rounded-[1.25rem] p-5 sm:p-6 flex items-start sm:items-center gap-4 relative overflow-hidden mb-6"
             style={{ background: "rgba(43, 182, 168, 0.04)" }}
           >
             {/* Very subtle dots just for the privacy card */}
