@@ -291,7 +291,7 @@ export function LandingPage() {
                     borderRadius: "24px",
                   }}
                 >
-                  <div className="flex items-center gap-4 mb-8">
+                  <div className="flex items-center gap-4" style={{ marginBottom: "32px" }}>
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                       style={{ background: "rgba(43, 182, 168, 0.15)" }}
