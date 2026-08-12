@@ -557,12 +557,7 @@ export function LandingPage() {
             
             {/* Main Heading */}
             <motion.h2 variants={fadeUp} custom={1} className="text-4xl md:text-5xl lg:text-[56px] leading-tight font-serif font-bold text-slate-900 tracking-tight mb-6">
-              Three <span className="relative inline-block text-teal-600">
-                Simple
-                <svg width="100%" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute -bottom-1.5 left-0 text-teal-500 w-full" preserveAspectRatio="none">
-                  <path d="M2 9C35 2 85 2 118 9" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                </svg>
-              </span> Steps
+              Three <span className="text-teal-600">Simple</span> Steps
             </motion.h2>
 
             <motion.p variants={fadeUp} custom={2} className="text-[17px] md:text-[20px] text-slate-500 max-w-2xl mx-auto leading-relaxed mt-2 font-medium">
