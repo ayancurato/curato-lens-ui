@@ -226,24 +226,24 @@ export function LandingPage() {
                 initial="hidden"
                 animate="visible"
                 variants={stagger}
-                className="pt-4 text-left min-w-0 flex flex-col items-start gap-6 [&_*]:!m-0 max-sm:!items-start"
+                className="pt-4 text-left min-w-0 w-full flex flex-col items-start gap-6 [&_*]:!m-0"
               >
                 <motion.div
                   variants={fadeUp}
                   custom={1}
-                  className="w-full flex flex-col items-start max-sm:!items-start"
+                  className="w-full flex flex-col items-start"
                 >
-                  <div className="flex items-center gap-3 pb-6 max-sm:!justify-start w-full">
+                  <div className="flex items-center gap-3 pb-6">
                     <Sparkles className="w-10 h-10 text-blue-600 shrink-0" />
                     <h2 
-                      className="!text-4xl sm:!text-5xl md:!text-6xl lg:!text-[4rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 tracking-tight leading-[1.05] max-sm:!text-left"
+                      className="!text-4xl sm:!text-5xl md:!text-6xl lg:!text-[4rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 tracking-tight leading-[1.05]"
                       style={{ fontFamily: "var(--font-serif)" }}
                     >
                       Curato Lens
                     </h2>
                   </div>
                   <h1
-                    className="!text-4xl sm:!text-5xl md:!text-6xl lg:!text-[4rem] leading-[1.05] break-words w-full max-sm:!text-left"
+                    className="!text-4xl sm:!text-5xl md:!text-6xl lg:!text-[4rem] leading-[1.05] break-words"
                     style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
                   >
                     Brand<br />Intelligence<br /><span style={{ color: "var(--color-teal)" }}>Platform</span>
@@ -253,7 +253,7 @@ export function LandingPage() {
                 <motion.p
                   variants={fadeUp}
                   custom={2}
-                  className="text-lg md:text-xl max-w-[600px] leading-relaxed pb-2 w-full max-sm:!text-left"
+                  className="text-lg md:text-xl max-w-[600px] leading-relaxed pb-2"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
                   Analyze your company's digital presence and receive a
@@ -263,7 +263,7 @@ export function LandingPage() {
                 <motion.div
                   variants={fadeUp}
                   custom={3}
-                  className="flex items-center gap-4 max-sm:!justify-start w-full flex-wrap"
+                  className="flex items-center gap-4 flex-wrap"
                 >
                   <div className="flex items-center gap-3 bg-white px-4 py-2.5 rounded-xl border border-gray-100 shadow-sm text-sm font-semibold" style={{ color: "var(--color-navy)" }}>
                     <Zap className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
