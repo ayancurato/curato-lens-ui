@@ -233,7 +233,7 @@ export function LandingPage() {
                   custom={1}
                   className="w-full flex flex-col items-start"
                 >
-                  <div className="flex items-center gap-3 pb-6">
+                  <div className="flex items-center gap-3" style={{ marginBottom: "24px" }}>
                     <Sparkles className="w-10 h-10 text-blue-600 shrink-0" />
                     <h2 
                       className="!text-4xl sm:!text-5xl md:!text-6xl lg:!text-[4rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 tracking-tight leading-[1.05]"
