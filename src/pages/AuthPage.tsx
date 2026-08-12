@@ -154,9 +154,9 @@ export function AuthPage() {
                 </form>
               )}
               
-              <div className="mt-8 mb-2 flex items-center justify-center gap-2 text-slate-400">
-                <Lock className="w-[14px] h-[14px]" />
-                <p className="text-[13px]">Your information is secure and will never be shared.</p>
+              <div className="mt-8 mb-2 flex items-start sm:items-center justify-center gap-2 text-slate-400 max-sm:pb-8">
+                <Lock className="w-[14px] h-[14px] mt-[2px] sm:mt-0 flex-shrink-0" />
+                <p className="text-[13px] leading-snug sm:leading-normal">Your information is secure and will never be shared.</p>
               </div>
             </div>
           </div>
