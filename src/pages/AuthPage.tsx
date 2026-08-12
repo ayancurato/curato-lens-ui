@@ -92,10 +92,10 @@ export function AuthPage() {
 
             <h2 className="text-[28px] font-serif font-bold text-slate-900 mb-4 text-center tracking-tight">Verify your email</h2>
             <p className="text-slate-500 text-[15px] mb-10 text-center leading-relaxed">
-              We've sent a verification code to your work email<br className="hidden sm:block" />to help secure your account.
+              We've sent a verification code to your work email <br className="hidden sm:block" />to help secure your account.
             </p>
 
-            <div className="w-full box-border">
+            <div className="w-full max-sm:w-[90%] box-border">
               {step === "email" ? (
                 <form onSubmit={handleSendCode} className="space-y-4 w-full">
                   <div className="space-y-2.5">
