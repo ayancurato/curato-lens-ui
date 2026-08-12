@@ -91,7 +91,7 @@ export function ReportPage() {
       <Navbar />
 
       {/* 1. HERO (Includes Overall Score, Title, Summary, Radar) */}
-      <div className="mb-0 max-sm:mb-12 relative z-20">
+      <div className="mb-14 max-sm:mb-12 md:mb-20 relative z-20">
         <ReportHero 
           companyName={meta.company_name || meta.domain || "Brand Intelligence Report"} 
           overallScore={overallScore} 
