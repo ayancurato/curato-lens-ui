@@ -281,17 +281,16 @@ export function LandingPage() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-                className="w-full max-w-xl mx-auto lg:ml-auto min-w-0"
+                className="w-full max-w-xl mx-auto lg:ml-auto min-w-0 [&_*]:!m-0"
               >
                 <div
-                  className="shadow-2xl"
+                  className="shadow-2xl flex flex-col gap-6 p-6 sm:p-8 lg:p-10"
                   style={{
-                    padding: "2.5rem",
                     background: "var(--color-navy)",
                     borderRadius: "24px",
                   }}
                 >
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-4">
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
                       style={{ background: "rgba(43, 182, 168, 0.15)" }}
@@ -299,7 +298,7 @@ export function LandingPage() {
                       <Sparkles className="w-6 h-6" style={{ color: "var(--color-teal)" }} />
                     </div>
                     <h3
-                      className="text-2xl md:text-3xl m-0"
+                      className="text-[34px] leading-[1.1] md:text-3xl"
                       style={{ fontFamily: "var(--font-serif)", color: "#ffffff" }}
                     >
                       Analyze Your Brand
@@ -309,18 +308,18 @@ export function LandingPage() {
 
 
                   {isExhausted ? (
-                    <div className="text-center py-8">
-                      <p className="text-xl text-white mb-2">Your {company?.free_audits_total} free audits have been used.</p>
-                      <p className="text-neutral-400 mb-6">Want deeper intelligence and additional audits for your company?</p>
+                    <div className="text-center py-8 flex flex-col gap-4 w-full">
+                      <p className="text-xl text-white">Your {company?.free_audits_total} free audits have been used.</p>
+                      <p className="text-neutral-400 pb-2">Want deeper intelligence and additional audits for your company?</p>
                       <button className="bg-white text-neutral-900 font-medium px-6 py-3 rounded-xl hover:bg-neutral-100 transition-colors w-full">
                         Talk to Curato
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit(onSubmit)} className="text-left" style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                    <form onSubmit={handleSubmit(onSubmit)} className="text-left w-full flex flex-col gap-4 box-border">
                     {/* Website URL */}
-                    <div style={{ background: "#ffffff", borderRadius: "16px", padding: "12px 16px", display: "flex", flexDirection: "column", gap: "6px" }}>
-                      <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", fontWeight: "bold", color: "var(--color-navy)", margin: 0 }}>
+                    <div className="bg-white rounded-[16px] flex flex-col gap-[6px] p-4 md:p-[12px_16px] w-full box-border">
+                      <label className="flex items-center gap-2 text-[12px] font-bold !m-0" style={{ color: "var(--color-navy)" }}>
                         <Globe className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
                         Website URL <span style={{ color: "var(--color-danger)" }}>*</span>
                       </label>
@@ -328,26 +327,27 @@ export function LandingPage() {
                         {...register("website_url")}
                         type="text"
                         placeholder="example.com"
-                        style={{ width: "100%", fontSize: "15px", border: "none", outline: "none", background: "transparent", color: "var(--color-navy)", fontWeight: 500, padding: 0 }}
+                        className="w-full text-[16px] md:text-[15px] border-none outline-none bg-transparent font-medium !p-0 box-border"
+                        style={{ color: "var(--color-navy)" }}
                         disabled={isLoading}
                       />
                       {errors.website_url && (
-                        <p className="text-xs m-0" style={{ color: "var(--color-danger)", marginTop: "4px" }}>
+                        <p className="text-xs !m-0 !mt-1" style={{ color: "var(--color-danger)" }}>
                           {errors.website_url.message}
                         </p>
                       )}
                     </div>
 
                     {/* Social URLs */}
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full box-border">
                       {[
                         { name: "linkedin_url" as const, icon: Link, placeholder: "LinkedIn URL", label: "LinkedIn" },
                         { name: "instagram_url" as const, icon: Camera, placeholder: "Instagram URL", label: "Instagram" },
                         { name: "twitter_url" as const, icon: AtSign, placeholder: "X / Twitter URL", label: "X / Twitter" },
                         { name: "facebook_url" as const, icon: Users, placeholder: "Facebook URL", label: "Facebook" },
                       ].map((field) => (
-                        <div key={field.name} style={{ background: "#ffffff", borderRadius: "16px", padding: "12px 16px", display: "flex", flexDirection: "column", gap: "6px" }}>
-                          <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", fontWeight: "bold", color: "var(--color-navy)", margin: 0 }}>
+                        <div key={field.name} className="bg-white rounded-[16px] flex flex-col gap-[6px] p-4 md:p-[12px_16px] w-full box-border">
+                          <label className="flex items-center gap-2 text-[12px] font-bold !m-0" style={{ color: "var(--color-navy)" }}>
                             <field.icon className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
                             {field.label}
                           </label>
@@ -355,11 +355,12 @@ export function LandingPage() {
                             {...register(field.name)}
                             type="text"
                             placeholder={field.placeholder}
-                            style={{ width: "100%", fontSize: "15px", border: "none", outline: "none", background: "transparent", color: "var(--color-navy)", fontWeight: 500, padding: 0 }}
+                            className="w-full text-[16px] md:text-[15px] border-none outline-none bg-transparent font-medium !p-0 box-border"
+                            style={{ color: "var(--color-navy)" }}
                             disabled={isLoading}
                           />
                           {errors[field.name] && (
-                            <p className="text-xs m-0" style={{ color: "var(--color-danger)", marginTop: "4px" }}>
+                            <p className="text-xs !m-0 !mt-1" style={{ color: "var(--color-danger)" }}>
                               {errors[field.name]?.message}
                             </p>
                           )}
@@ -368,8 +369,8 @@ export function LandingPage() {
                     </div>
 
                     {/* YouTube */}
-                    <div style={{ background: "#ffffff", borderRadius: "16px", padding: "12px 16px", display: "flex", flexDirection: "column", gap: "6px" }}>
-                      <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", fontWeight: "bold", color: "var(--color-navy)", margin: 0 }}>
+                    <div className="bg-white rounded-[16px] flex flex-col gap-[6px] p-4 md:p-[12px_16px] w-full box-border">
+                      <label className="flex items-center gap-2 text-[12px] font-bold !m-0" style={{ color: "var(--color-navy)" }}>
                         <Play className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
                         YouTube
                       </label>
@@ -377,11 +378,12 @@ export function LandingPage() {
                         {...register("youtube_url")}
                         type="text"
                         placeholder="YouTube URL"
-                        style={{ width: "100%", fontSize: "15px", border: "none", outline: "none", background: "transparent", color: "var(--color-navy)", fontWeight: 500, padding: 0 }}
+                        className="w-full text-[16px] md:text-[15px] border-none outline-none bg-transparent font-medium !p-0 box-border"
+                        style={{ color: "var(--color-navy)" }}
                         disabled={isLoading}
                       />
                       {errors.youtube_url && (
-                        <p className="text-xs m-0" style={{ color: "var(--color-danger)", marginTop: "4px" }}>
+                        <p className="text-xs !m-0 !mt-1" style={{ color: "var(--color-danger)" }}>
                           {errors.youtube_url?.message}
                         </p>
                       )}
@@ -390,7 +392,7 @@ export function LandingPage() {
                     {/* Error */}
                     {createAnalysis.isError && (
                       <div
-                        className="p-3 rounded-xl text-sm"
+                        className="p-3 rounded-xl text-sm w-full box-border"
                         style={{
                           background: "rgba(239, 68, 68, 0.06)",
                           color: "var(--color-danger)",
@@ -404,7 +406,7 @@ export function LandingPage() {
                     <button
                       type="submit"
                       disabled={isLoading}
-                      className="btn-primary w-full text-base py-4 mt-4 flex items-center justify-center gap-2"
+                      className="btn-primary w-full text-base py-4 !mt-4 flex items-center justify-center gap-2 box-border h-[56px]"
                       style={{ borderRadius: "12px" }}
                     >
                       {isLoading ? (
@@ -425,7 +427,7 @@ export function LandingPage() {
                       )}
                     </button>
 
-                    <p className="text-center text-xs mt-4 flex items-center justify-center gap-1.5" style={{ color: "rgba(255,255,255,0.7)" }}>
+                    <p className="text-center text-xs !mt-5 flex items-center justify-center gap-1.5 w-full" style={{ color: "rgba(255,255,255,0.7)" }}>
                       <Lock className="w-3 h-3" />
                       Powered by AI Agents
                     </p>
