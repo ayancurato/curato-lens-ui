@@ -459,12 +459,7 @@ export function LandingPage() {
               custom={1}
               className="text-4xl md:text-5xl lg:text-[56px] leading-tight font-serif font-bold text-slate-900 tracking-tight mb-6"
             >
-              Comprehensive <span className="relative inline-block text-teal-700">
-                Brand
-                <svg width="100%" height="10" viewBox="0 0 120 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute -bottom-1 left-0 text-teal-600 w-full" preserveAspectRatio="none">
-                  <path d="M3 7C35 2 85 2 117 7" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                </svg>
-              </span> Intelligence
+              Comprehensive <span className="text-teal-700">Brand</span> Intelligence
             </motion.h2>
             
             <motion.p
