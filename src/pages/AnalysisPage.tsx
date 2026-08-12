@@ -219,7 +219,7 @@ export function AnalysisPage() {
               transition={{ delay: 0.1, duration: 0.5 }}
               className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 mb-8 relative overflow-hidden"
             >
-              <div className="flex items-center justify-between gap-6 relative z-10">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 relative z-10">
                 {/* Left: Icon */}
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -230,7 +230,7 @@ export function AnalysisPage() {
 
                 {/* Center: Activity */}
                 <div className="flex-grow min-w-0">
-                  <h3 className="font-semibold text-gray-900 text-[1.05rem] mb-1 truncate">
+                  <h3 className="font-semibold text-gray-900 text-[1.05rem] mb-1 truncate max-sm:whitespace-normal">
                     {isCompleted ? "Analysis finished successfully." : displayedText}
                   </h3>
                   <div className="flex items-center gap-3 text-sm text-gray-500 font-medium">
@@ -284,7 +284,7 @@ export function AnalysisPage() {
                 className="absolute top-8 bottom-8 left-[4.75rem] w-px bg-gray-100 hidden sm:block z-0" 
               />
               
-              <div className="space-y-0 relative z-10">
+              <div className="flex flex-col gap-6 md:block relative z-10 max-sm:mt-8">
                 {PIPELINE_STEPS.map((step, i) => {
                   const isDone = isCompleted || i < completedSteps;
                   const isActive = !isCompleted && !isFailed && i === completedSteps;
@@ -297,7 +297,7 @@ export function AnalysisPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.08, duration: 0.4 }}
-                      className={`flex flex-row items-start md:items-center gap-4 md:gap-6 py-5 md:py-10 bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 mb-3 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:p-0 md:mb-0 ${
+                      className={`flex flex-row items-start md:items-center gap-4 md:gap-6 py-6 md:py-10 bg-white rounded-[20px] shadow-sm border border-gray-100 p-6 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:p-0 ${
                         !isLast ? "md:border-b md:border-gray-50" : ""
                       }`}
                     >
