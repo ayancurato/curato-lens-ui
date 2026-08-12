@@ -213,7 +213,7 @@ export function LandingPage() {
   const isExhausted = company && company.free_audits_used >= company.free_audits_total;
 
   return (
-    <div style={{ background: "var(--color-bg)" }}>
+    <div className="overflow-x-hidden w-full" style={{ background: "var(--color-bg)" }}>
       <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
@@ -231,7 +231,7 @@ export function LandingPage() {
                 <motion.h1
                   variants={fadeUp}
                   custom={1}
-                  className="text-5xl md:text-6xl lg:text-[4rem] leading-[1.05]"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.05] break-words"
                   style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
                 >
                   <span className="flex items-center gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 font-bold pb-6 tracking-tight">
