@@ -213,7 +213,7 @@ export function LandingPage() {
   const isExhausted = company && company.free_audits_used >= company.free_audits_total;
 
   return (
-    <div className="overflow-x-hidden w-full" style={{ background: "var(--color-bg)" }}>
+    <div style={{ background: "var(--color-bg)" }}>
       <Navbar />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
@@ -228,18 +228,27 @@ export function LandingPage() {
                 variants={stagger}
                 className="pt-4 text-left min-w-0 flex flex-col items-start gap-6 [&_*]:!m-0"
               >
-                <motion.h1
+                <motion.div
                   variants={fadeUp}
                   custom={1}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.05] break-words"
-                  style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
+                  className="w-full flex flex-col items-start"
                 >
-                  <span className="flex items-center gap-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 font-bold pb-6 tracking-tight">
+                  <div className="flex items-center gap-3 pb-6">
                     <Sparkles className="w-10 h-10 text-blue-600 shrink-0" />
-                    Curato Lens
-                  </span>
-                  Brand<br />Intelligence<br /><span style={{ color: "var(--color-teal)" }}>Platform</span>
-                </motion.h1>
+                    <h2 
+                      className="!text-4xl sm:!text-5xl md:!text-6xl lg:!text-[4rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-500 tracking-tight leading-[1.05]"
+                      style={{ fontFamily: "var(--font-serif)" }}
+                    >
+                      Curato Lens
+                    </h2>
+                  </div>
+                  <h1
+                    className="!text-4xl sm:!text-5xl md:!text-6xl lg:!text-[4rem] leading-[1.05] break-words"
+                    style={{ fontFamily: "var(--font-serif)", color: "var(--color-navy)" }}
+                  >
+                    Brand<br />Intelligence<br /><span style={{ color: "var(--color-teal)" }}>Platform</span>
+                  </h1>
+                </motion.div>
 
                 <motion.p
                   variants={fadeUp}
