@@ -284,9 +284,8 @@ export function LandingPage() {
                 className="w-full max-w-xl mx-auto lg:ml-auto min-w-0 [&_*]:!m-0"
               >
                 <div
-                  className="shadow-2xl flex flex-col gap-6"
+                  className="shadow-2xl flex flex-col gap-6 p-6 sm:p-8 lg:p-10"
                   style={{
-                    padding: "2.5rem",
                     background: "var(--color-navy)",
                     borderRadius: "24px",
                   }}
@@ -339,7 +338,7 @@ export function LandingPage() {
                     </div>
 
                     {/* Social URLs */}
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {[
                         { name: "linkedin_url" as const, icon: Link, placeholder: "LinkedIn URL", label: "LinkedIn" },
                         { name: "instagram_url" as const, icon: Camera, placeholder: "Instagram URL", label: "Instagram" },
