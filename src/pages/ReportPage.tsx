@@ -160,7 +160,7 @@ export function ReportPage() {
         </div>
       </section>
 
-      {/* 9. ASK CURATO AI */}
+      {/* 9. CONSULTATION CTA */}
       <section className="mb-12 md:mb-16">
         <div className="container-premium max-w-[1280px] flex justify-center mx-auto">
           <motion.div className="w-full max-w-3xl" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -170,13 +170,18 @@ export function ReportPage() {
                 <div className="w-16 h-16 rounded-[20px] flex items-center justify-center mb-6 md:mb-8 bg-[rgba(43,182,168,0.08)] group-hover:scale-105 transition-transform">
                   <MessageSquare className="w-8 h-8 text-[var(--color-teal)]" />
                 </div>
-                <h3 className="text-2xl md:text-3xl mb-4 font-serif text-[var(--color-navy)]">Ask Curato AI</h3>
+                <h3 className="text-2xl md:text-3xl mb-4 font-serif text-[var(--color-navy)]">Have questions about your report?</h3>
                 <p className="text-base mb-8 md:mb-10 text-[var(--color-text-secondary)] max-w-md leading-relaxed">
-                  Have questions about your report? Our AI assistant will help you dive deeper into your brand intelligence data.
+                  Want to know how to improve your brand score and turn these insights into action? Talk to a Curato expert.
                 </p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-[var(--color-bg)] text-[var(--color-navy)] border border-[var(--color-border-light)]">
-                  <Lock className="w-4 h-4 text-[var(--color-text-secondary)]" /> Coming Soon
-                </div>
+                <a 
+                  href="https://calendly.com/sarath-curato/30min" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold text-white bg-[var(--color-teal)] hover:bg-[var(--color-teal-dark)] shadow-[0_4px_14px_0_rgba(43,182,168,0.39)] hover:shadow-[0_6px_20px_rgba(43,182,168,0.23)] hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Book a Consultation &rarr;
+                </a>
               </div>
             </div>
           </motion.div>
