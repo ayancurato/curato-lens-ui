@@ -217,7 +217,7 @@ export function AnalysisPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 mb-8 max-sm:pb-8 max-sm:mb-10 relative overflow-hidden"
+              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 mb-12 md:mb-16 max-sm:pb-8 max-sm:mb-12 relative overflow-hidden"
             >
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 relative z-10">
                 {/* Left: Icon */}
@@ -230,7 +230,7 @@ export function AnalysisPage() {
 
                 {/* Center: Activity */}
                 <div className="flex-grow min-w-0">
-                  <h3 className="font-semibold text-gray-900 text-[1.05rem] mb-1 truncate max-sm:whitespace-normal">
+                  <h3 className="font-semibold text-gray-900 text-[1.05rem] mb-1 truncate max-sm:whitespace-normal" style={{ marginBottom: 4 }}>
                     {isCompleted ? "Analysis finished successfully." : displayedText}
                   </h3>
                   <div className="flex items-center gap-3 text-sm text-gray-500 font-medium">
@@ -297,7 +297,7 @@ export function AnalysisPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.08, duration: 0.4 }}
-                      className={`flex flex-row items-start md:items-center gap-4 md:gap-6 py-5 max-sm:py-6 md:py-10 bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 max-sm:p-6 mb-3 max-sm:mb-0 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:p-0 md:mb-0 ${
+                      className={`flex flex-row items-center md:items-center gap-4 md:gap-6 py-5 max-sm:py-6 md:py-10 bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 max-sm:p-6 mb-3 max-sm:mb-0 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:p-0 md:mb-0 ${
                         !isLast ? "md:border-b md:border-gray-50" : ""
                       }`}
                     >
@@ -338,12 +338,12 @@ export function AnalysisPage() {
                       <div className="flex-grow min-w-0 flex flex-col md:flex-row md:items-center">
                         <div className="flex-grow min-w-0 pr-0 md:pr-4 pt-1 md:pt-0">
                           <h4 
-                            className="text-base font-semibold mb-1 md:mb-2"
-                            style={{ color: isActive || isDone ? "var(--color-navy)" : "#475569" }}
+                            className="text-base font-semibold !mb-1 md:!mb-2"
+                            style={{ color: isActive || isDone ? "var(--color-navy)" : "#475569", marginBottom: 6 }}
                           >
                             {step.title}
                           </h4>
-                          <p className="text-[15px] text-gray-500/90 font-medium leading-relaxed">
+                          <p className="text-[15px] text-gray-500/90 font-medium leading-relaxed !mb-0" style={{ marginBottom: 0 }}>
                             {step.subtitle}
                           </p>
                           
