@@ -128,7 +128,7 @@ export function ReportPage() {
             <motion.h2 variants={fadeUp} custom={0} className="text-3xl md:text-4xl mb-10 text-center font-serif text-[var(--color-navy)]">
               Score Breakdown
             </motion.h2>
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center items-start gap-8">
               {scores?.category_scores
                 ?.filter((cat) => {
                   const labelUpper = (cat.category || cat.label || "").toUpperCase();
