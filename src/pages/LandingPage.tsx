@@ -303,8 +303,8 @@ export function LandingPage() {
                       <Sparkles className="w-6 h-6" style={{ color: "var(--color-teal)" }} />
                     </div>
                     <h3
-                      className="text-2xl md:text-3xl m-0"
-                      style={{ fontFamily: "var(--font-serif)", color: "#ffffff" }}
+                      className="text-2xl md:text-3xl !m-0 leading-none"
+                      style={{ fontFamily: "var(--font-serif)", color: "#ffffff", lineHeight: 1, paddingBottom: "2px" }}
                     >
                       Analyze Your Brand
                     </h3>
