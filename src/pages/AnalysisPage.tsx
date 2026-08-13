@@ -479,10 +479,10 @@ export function AnalysisPage() {
               <Lock className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
             </div>
             <div>
-              <h4 className="font-semibold text-gray-900 text-sm mb-0.5">
+              <h4 className="font-semibold text-gray-900 text-sm !m-0" style={{ marginBottom: "2px", lineHeight: 1.2 }}>
                 Your data is safe with us
               </h4>
-              <p className="text-[0.85rem] font-medium text-gray-500">
+              <p className="text-[0.85rem] font-medium text-gray-500 !m-0" style={{ marginTop: 0, lineHeight: 1.4 }}>
                 We do not share your data with any third parties. Your privacy is our priority.
               </p>
             </div>
