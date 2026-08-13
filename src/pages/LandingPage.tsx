@@ -554,7 +554,7 @@ export function LandingPage() {
             className="flex flex-col items-center text-center mb-16 w-full"
           >
             {/* Header Pill */}
-            <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-teal-50/70 mb-6 border border-teal-100">
+            <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-teal-50/70 mb-6 border border-teal-100" style={{ marginBottom: "24px" }}>
               <Sparkles className="w-3.5 h-3.5 text-teal-600" fill="currentColor" />
               <span className="text-[11px] font-bold tracking-[0.1em] text-slate-800 uppercase">How It Works</span>
             </motion.div>
