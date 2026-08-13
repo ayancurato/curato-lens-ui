@@ -32,7 +32,7 @@ export function ReportHero({ companyName, overallScore, categoryScores, executiv
   return (
     <section style={{ paddingTop: "180px" }}>
       <div className="container-premium max-w-[1280px]">
-        <div className="bg-white rounded-[24px] border border-[var(--color-border-light)] p-8 md:p-12 shadow-[var(--shadow-card)]">
+        <div className="bg-white rounded-[24px] border border-[var(--color-border-light)] shadow-[var(--shadow-card)]" style={{ padding: "48px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             {/* Left: Overall Score */}
