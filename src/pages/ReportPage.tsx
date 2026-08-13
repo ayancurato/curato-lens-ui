@@ -178,7 +178,8 @@ export function ReportPage() {
                   href="https://calendly.com/sarath-curato/30min" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-full text-base font-semibold text-white bg-[var(--color-teal)] hover:bg-[var(--color-teal-dark)] shadow-[0_4px_14px_0_rgba(43,182,168,0.39)] hover:shadow-[0_6px_20px_rgba(43,182,168,0.23)] hover:-translate-y-0.5 transition-all duration-200"
+                  className="inline-flex items-center justify-center rounded-full text-base font-semibold bg-[var(--color-teal)] hover:bg-[var(--color-teal-dark)] shadow-[0_4px_14px_0_rgba(43,182,168,0.39)] hover:shadow-[0_6px_20px_rgba(43,182,168,0.23)] hover:-translate-y-0.5 transition-all duration-200"
+                  style={{ padding: "14px 32px", color: "#ffffff", textDecoration: "none", minWidth: "200px" }}
                 >
                   Book a Consultation &rarr;
                 </a>
