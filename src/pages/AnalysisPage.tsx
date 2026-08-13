@@ -102,7 +102,11 @@ export function AnalysisPage() {
   const { data: realJob, isError: realIsError } = useJobStatus(jobId === "demo" ? null : (jobId ?? null));
 
   // Demo state for UI testing without tokens
-  const [demoJob, setDemoJob] = useState({ status: "running", progress_pct: 0, job_id: "demo" });
+  const [demoJob, setDemoJob] = useState<{ status: string; progress_pct: number; job_id: string; error_message?: string }>({ 
+    status: "running", 
+    progress_pct: 0, 
+    job_id: "demo" 
+  });
   useEffect(() => {
     if (jobId === "demo") {
       const interval = setInterval(() => {
