@@ -128,7 +128,8 @@ function InsightRow({ obj, idx }: { obj: Insight, idx: number }) {
     <div className="border-b border-[var(--color-border-light)] last:border-b-0 bg-white">
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-start justify-between py-6 md:py-8 px-6 md:px-8 hover:bg-[var(--color-bg)] transition-colors text-left"
+        className="w-full flex items-start justify-between hover:bg-[var(--color-bg)] transition-colors text-left"
+        style={{ padding: "32px" }}
       >
         <div className="flex items-start gap-5 md:gap-6 flex-1 min-w-0">
           <div className="hidden md:flex w-10 h-10 rounded-full items-center justify-center bg-[var(--color-bg)] shrink-0 mt-1">
@@ -268,7 +269,7 @@ export function AIConsultantInsights({ insights, categoryScores }: AIConsultantI
 
   return (
     <div className="bg-white rounded-[24px] shadow-[var(--shadow-card)] border border-[var(--color-border-light)] overflow-hidden">
-      <div className="pt-6 md:pt-8 px-6 pb-5 md:pb-6 border-b border-[var(--color-border-light)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="border-b border-[var(--color-border-light)] flex flex-col md:flex-row md:items-center justify-between gap-4" style={{ padding: "32px" }}>
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full flex items-center justify-center bg-[rgba(43,182,168,0.1)]">
             <Lightbulb className="w-6 h-6 text-[var(--color-teal)]" />
@@ -280,7 +281,7 @@ export function AIConsultantInsights({ insights, categoryScores }: AIConsultantI
             <p className="text-sm text-[var(--color-text-secondary)] mt-1 !mb-0">Priority recommendations identified by Curato Lens</p>
           </div>
         </div>
-        <div className="text-sm font-semibold text-[var(--color-navy)] px-4 py-2 bg-[var(--color-bg)] rounded-full">
+        <div className="text-sm font-semibold text-[var(--color-navy)] bg-[var(--color-bg)] rounded-full" style={{ padding: "8px 16px" }}>
           View All {normalizedInsights.length} Insights
         </div>
       </div>
