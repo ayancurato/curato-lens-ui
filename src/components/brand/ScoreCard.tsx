@@ -112,17 +112,23 @@ export function ScoreCard({ label, score, delay = 0, explanation, confidence }: 
                       {explanation ? (
                         Array.isArray(explanation) ? (
                           // Primary path for new reports: reasoning is preserved as an array
-                          <ul className="list-disc ml-6 space-y-4 marker:text-gray-400" style={{ listStyleType: 'disc', listStylePosition: 'outside' }}>
+                          <ul className="space-y-4">
                             {explanation.map((line, idx) => (
-                              <li key={idx} className="pl-1" style={{ display: 'list-item' }}>{String(line).replace(/^[-*]\s*/, '')}</li>
+                              <li key={idx} className="flex items-start">
+                                <span className="text-gray-400 mr-2 font-bold text-lg leading-none">•</span>
+                                <span className="flex-1">{String(line).replace(/^[-*]\s*/, '')}</span>
+                              </li>
                             ))}
                           </ul>
                         ) : typeof explanation === 'string' ? (
                           // Legacy path for old reports: reasoning was flattened into a single string
                           explanation.split(/\n|\\n/).filter(line => line.trim()).every(line => line.trim().startsWith('-') || line.trim().startsWith('*')) ? (
-                            <ul className="list-disc ml-6 space-y-4 marker:text-gray-400" style={{ listStyleType: 'disc', listStylePosition: 'outside' }}>
+                            <ul className="space-y-4">
                               {explanation.split(/\n|\\n/).filter(line => line.trim()).map((line, idx) => (
-                                <li key={idx} className="pl-1" style={{ display: 'list-item' }}>{line.replace(/^[-*]\s*/, '')}</li>
+                                <li key={idx} className="flex items-start">
+                                  <span className="text-gray-400 mr-2 font-bold text-lg leading-none">•</span>
+                                  <span className="flex-1">{line.replace(/^[-*]\s*/, '')}</span>
+                                </li>
                               ))}
                             </ul>
                           ) : (
