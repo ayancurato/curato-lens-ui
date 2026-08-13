@@ -111,16 +111,18 @@ export function ScoreCard({ label, score, delay = 0, explanation, confidence }: 
                     <div className="text-[15px] text-[var(--color-navy)] leading-relaxed">
                       {explanation ? (
                         Array.isArray(explanation) ? (
+                          // Primary path for new reports: reasoning is preserved as an array
                           <ul className="list-disc pl-5 space-y-2">
                             {explanation.map((line, idx) => (
-                              <li key={idx}>{String(line).replace(/^[-*]\\s*/, '')}</li>
+                              <li key={idx}>{String(line).replace(/^[-*]\s*/, '')}</li>
                             ))}
                           </ul>
                         ) : typeof explanation === 'string' ? (
-                          explanation.split('\\n').filter(line => line.trim()).every(line => line.trim().startsWith('-') || line.trim().startsWith('*')) ? (
+                          // Legacy path for old reports: reasoning was flattened into a single string
+                          explanation.split(/\n|\\n/).filter(line => line.trim()).every(line => line.trim().startsWith('-') || line.trim().startsWith('*')) ? (
                             <ul className="list-disc pl-5 space-y-2">
-                              {explanation.split('\\n').filter(line => line.trim()).map((line, idx) => (
-                                <li key={idx}>{line.replace(/^[-*]\\s*/, '')}</li>
+                              {explanation.split(/\n|\\n/).filter(line => line.trim()).map((line, idx) => (
+                                <li key={idx}>{line.replace(/^[-*]\s*/, '')}</li>
                               ))}
                             </ul>
                           ) : (
