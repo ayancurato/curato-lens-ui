@@ -33,7 +33,7 @@ export function ScoreCard({ label, score, delay = 0, explanation, confidence }: 
       transition={{ delay: delay * 0.08, duration: 0.5 }}
       className="bg-white rounded-[20px] shadow-[var(--shadow-card)] border border-[var(--color-border-light)] flex flex-col overflow-hidden hover:shadow-[var(--shadow-md)] transition-shadow h-full"
     >
-      <div className="p-7 md:p-8 text-center relative z-10 flex flex-col items-center flex-grow">
+      <div className="text-center relative z-10 flex flex-col items-center flex-grow" style={{ padding: "32px" }}>
         <p className="text-xs font-bold uppercase tracking-widest mb-4 flex items-center justify-center gap-1.5 text-[var(--color-text-secondary)]">
           {label}
           {label.toLowerCase().includes("website") && (
@@ -80,7 +80,8 @@ export function ScoreCard({ label, score, delay = 0, explanation, confidence }: 
         {/* Explain toggle */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="mx-auto flex items-center justify-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-full hover:bg-[var(--color-bg)] transition-colors text-[var(--color-teal)]"
+          className="mx-auto flex items-center justify-center gap-1.5 text-sm font-semibold rounded-full hover:bg-[var(--color-bg)] transition-colors text-[var(--color-teal)]"
+          style={{ padding: "8px 16px" }}
         >
           <Info className="w-4 h-4" />
           Why?
@@ -99,7 +100,7 @@ export function ScoreCard({ label, score, delay = 0, explanation, confidence }: 
             exit={{ height: 0, opacity: 0 }}
             className="bg-[var(--color-bg)] border-t border-[var(--color-border-light)]"
           >
-            <div className="p-6 text-left space-y-4">
+            <div className="text-left space-y-4" style={{ padding: "24px" }}>
               {isNotAnalyzed ? (
                 <p className="text-sm text-[var(--color-text-secondary)]">
                   Social profiles were not supplied for analysis.
