@@ -274,10 +274,10 @@ export function AIConsultantInsights({ insights, categoryScores }: AIConsultantI
             <Lightbulb className="w-6 h-6 text-[var(--color-teal)]" />
           </div>
           <div>
-            <h3 className="text-2xl md:text-3xl font-serif text-[var(--color-navy)]">
+            <h3 className="text-2xl md:text-3xl font-serif text-[var(--color-navy)] !mb-0">
               AI Consultant Insights
             </h3>
-            <p className="text-sm text-[var(--color-text-secondary)] mt-1">Priority recommendations identified by Curato Lens</p>
+            <p className="text-sm text-[var(--color-text-secondary)] mt-1 !mb-0">Priority recommendations identified by Curato Lens</p>
           </div>
         </div>
         <div className="text-sm font-semibold text-[var(--color-navy)] px-4 py-2 bg-[var(--color-bg)] rounded-full">
