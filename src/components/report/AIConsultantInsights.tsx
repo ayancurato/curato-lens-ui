@@ -128,7 +128,7 @@ function InsightRow({ obj, idx }: { obj: Insight, idx: number }) {
     <div className="border-b border-[var(--color-border-light)] last:border-b-0 bg-white">
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between py-6 md:py-8 px-6 md:px-8 hover:bg-[var(--color-bg)] transition-colors text-left"
+        className="w-full flex items-center justify-between py-10 md:py-12 px-6 md:px-8 hover:bg-[var(--color-bg)] transition-colors text-left"
       >
         <div className="flex items-center gap-5 md:gap-6 flex-1 min-w-0">
           <div className="hidden md:flex w-10 h-10 rounded-full items-center justify-center bg-[var(--color-bg)] shrink-0">
