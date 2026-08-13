@@ -97,7 +97,27 @@ const DotPattern = ({ className }: { className?: string }) => (
 export function AnalysisPage() {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
-  const { data: job, isError } = useJobStatus(jobId ?? null);
+  
+  // Real API hook (disabled if demo mode)
+  const { data: realJob, isError: realIsError } = useJobStatus(jobId === "demo" ? null : (jobId ?? null));
+
+  // Demo state for UI testing without tokens
+  const [demoJob, setDemoJob] = useState({ status: "running", progress_pct: 0, job_id: "demo" });
+  useEffect(() => {
+    if (jobId === "demo") {
+      const interval = setInterval(() => {
+        setDemoJob(prev => ({
+          ...prev,
+          // Cap at 95% so it stays on the analysis screen indefinitely for preview
+          progress_pct: prev.progress_pct >= 95 ? 95 : prev.progress_pct + Math.floor(Math.random() * 15)
+        }));
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [jobId]);
+
+  const job = jobId === "demo" ? demoJob : realJob;
+  const isError = jobId === "demo" ? false : realIsError;
 
   const [messageIndex, setMessageIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -128,13 +148,13 @@ export function AnalysisPage() {
 
   // Auto-navigate to report on completion
   useEffect(() => {
-    if (job?.status === "completed") {
+    if (job?.status === "completed" && jobId !== "demo") {
       const timer = setTimeout(() => {
         navigate(`/report/${job.job_id}`);
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [job?.status, job?.job_id, navigate]);
+  }, [job?.status, job?.job_id, navigate, jobId]);
 
   // Derive which steps are complete based on progress
   const progress = job?.progress_pct ?? 0;
