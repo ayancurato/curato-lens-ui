@@ -269,11 +269,11 @@ export function LandingPage() {
                   custom={3}
                   className="flex items-center gap-4 flex-wrap"
                 >
-                  <div className="flex items-center gap-3 bg-white px-4 py-2.5 rounded-xl border border-gray-100 shadow-sm text-sm font-semibold" style={{ color: "var(--color-navy)" }}>
+                  <div className="flex items-center gap-3 bg-white rounded-xl border border-gray-100 shadow-sm text-sm font-semibold" style={{ color: "var(--color-navy)", padding: "10px 16px" }}>
                     <Zap className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
                     Instant analysis
                   </div>
-                  <div className="flex items-center gap-3 bg-white px-4 py-2.5 rounded-xl border border-gray-100 shadow-sm text-sm font-semibold" style={{ color: "var(--color-navy)" }}>
+                  <div className="flex items-center gap-3 bg-white rounded-xl border border-gray-100 shadow-sm text-sm font-semibold" style={{ color: "var(--color-navy)", padding: "10px 16px" }}>
                     <TrendingUp className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
                     Executive reports
                   </div>
