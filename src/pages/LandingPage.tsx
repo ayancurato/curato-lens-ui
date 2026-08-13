@@ -453,7 +453,7 @@ export function LandingPage() {
             variants={stagger}
             className="flex flex-col items-center text-center mb-24 w-full"
           >
-            <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50/80 mb-8 border border-blue-100">
+            <motion.div variants={fadeUp} custom={0} className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50/80 mb-8 border border-blue-100" style={{ marginBottom: "32px" }}>
               <Sparkles className="w-3.5 h-3.5 text-blue-600" fill="currentColor" />
               <span className="text-[11px] font-bold tracking-widest text-blue-700 uppercase">Features</span>
             </motion.div>
