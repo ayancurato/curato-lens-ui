@@ -300,7 +300,8 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-8 max-sm:mb-12 relative"
+            className="mb-12 md:mb-20 relative"
+            style={{ marginBottom: "5rem" }}
           >
             <div className="relative">
               {/* Vertical Connecting Line */}
