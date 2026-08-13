@@ -81,10 +81,15 @@ export function ReportPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const categoryScoreData = scores?.category_scores?.map((cat) => ({
-    label: cat.category || cat.label || "",
-    score: cat.score ?? 0,
-  })) || [];
+  const categoryScoreData = scores?.category_scores
+    ?.filter((cat) => {
+      const labelUpper = (cat.category || cat.label || "").toUpperCase();
+      return !labelUpper.includes("MARKETING") && !labelUpper.includes("SOCIAL");
+    })
+    .map((cat) => ({
+      label: cat.category || cat.label || "",
+      score: cat.score ?? 0,
+    })) || [];
 
   return (
     <div className="bg-[var(--color-bg)] min-h-screen">
