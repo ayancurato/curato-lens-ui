@@ -295,26 +295,25 @@ export function AnalysisPage() {
             </motion.div>
           )}
 
-          {/* Main Timeline Card */}
+          {/* Main Timeline Container */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="md:bg-white md:rounded-[1.5rem] md:shadow-sm md:border md:border-gray-100 md:p-8 md:px-12 md:py-10 mb-8 max-sm:mb-12 relative md:overflow-hidden"
+            className="mb-8 max-sm:mb-12 relative"
           >
             <div className="relative">
               {/* Vertical Connecting Line */}
               {/* 24px (num) + 24px (gap) + 28px (half icon) = 76px (4.75rem) from left */}
               <div 
-                className="absolute top-8 bottom-8 left-[4.75rem] w-px bg-gray-100 hidden sm:block z-0" 
+                className="absolute top-8 bottom-8 left-[4.75rem] w-px bg-gray-200 hidden sm:block z-0" 
               />
               
-              <div className="flex flex-col max-sm:gap-6 md:space-y-0 md:block relative z-10 max-sm:mt-8">
+              <div className="flex flex-col gap-4 md:gap-6 relative z-10 max-sm:mt-8">
                 {PIPELINE_STEPS.map((step, i) => {
                   const isDone = isCompleted || i < completedSteps;
                   const isActive = !isCompleted && !isFailed && i === completedSteps;
                   const StepIcon = step.icon;
-                  const isLast = i === PIPELINE_STEPS.length - 1;
 
                   return (
                     <motion.div
@@ -322,9 +321,7 @@ export function AnalysisPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.08, duration: 0.4 }}
-                      className={`flex flex-row items-center md:items-center gap-4 md:gap-6 px-5 py-5 md:px-0 md:py-10 bg-white rounded-[20px] shadow-sm border border-gray-100 mb-3 max-sm:mb-0 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:mb-0 ${
-                        !isLast ? "md:border-b md:border-gray-50" : ""
-                      }`}
+                      className="flex flex-row items-center gap-4 md:gap-6 bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 md:p-6"
                     >
                       {/* Step number (Left) */}
                       <span
