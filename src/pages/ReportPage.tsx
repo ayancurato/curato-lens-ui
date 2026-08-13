@@ -169,7 +169,7 @@ export function ReportPage() {
       <section className="mb-12 md:mb-16">
         <div className="container-premium max-w-[1280px] flex justify-center mx-auto">
           <motion.div className="w-full max-w-3xl" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div className="bg-white rounded-[24px] shadow-[var(--shadow-card)] border border-[var(--color-border-light)] py-10 md:py-12 px-8 md:px-12 text-center relative overflow-hidden group hover:border-[var(--color-teal)] transition-colors">
+            <div className="bg-white rounded-[24px] shadow-[var(--shadow-card)] border border-[var(--color-border-light)] text-center relative overflow-hidden group hover:border-[var(--color-teal)] transition-colors" style={{ padding: "48px" }}>
               <div className="absolute inset-0 bg-gradient-to-br from-[rgba(43,182,168,0.02)] to-[rgba(11,31,51,0.02)]" />
               <div className="relative z-10 flex flex-col items-center">
                 <div className="w-16 h-16 rounded-[20px] flex items-center justify-center mb-6 md:mb-8 bg-[rgba(43,182,168,0.08)] group-hover:scale-105 transition-transform">
