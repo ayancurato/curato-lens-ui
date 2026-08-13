@@ -65,15 +65,15 @@ export function ReportHero({ companyName, overallScore, categoryScores, executiv
               )}
               
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] bg-[var(--color-bg)]" style={{ padding: "6px 12px" }}>
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] bg-[var(--color-bg)]" style={{ padding: "8px 16px" }}>
                   <Sparkles className="w-3.5 h-3.5 text-[var(--color-teal)]" />
                   AI-Powered Analysis
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] bg-[var(--color-bg)]" style={{ padding: "6px 12px" }}>
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] bg-[var(--color-bg)]" style={{ padding: "8px 16px" }}>
                   <BarChart2 className="w-3.5 h-3.5 text-[var(--color-navy)]" />
                   Data-Driven Insights
                 </span>
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] bg-[var(--color-bg)]" style={{ padding: "6px 12px" }}>
+                <span className="inline-flex items-center gap-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] bg-[var(--color-bg)]" style={{ padding: "8px 16px" }}>
                   <TrendingUp className="w-3.5 h-3.5 text-[var(--color-success)]" />
                   Actionable Recommendations
                 </span>
