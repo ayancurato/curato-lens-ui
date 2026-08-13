@@ -128,23 +128,23 @@ function InsightRow({ obj, idx }: { obj: Insight, idx: number }) {
     <div className="border-b border-[var(--color-border-light)] last:border-b-0 bg-white">
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between py-10 md:py-12 px-6 md:px-8 hover:bg-[var(--color-bg)] transition-colors text-left"
+        className="w-full flex items-start justify-between py-6 md:py-8 px-6 md:px-8 hover:bg-[var(--color-bg)] transition-colors text-left"
       >
-        <div className="flex items-center gap-5 md:gap-6 flex-1 min-w-0">
-          <div className="hidden md:flex w-10 h-10 rounded-full items-center justify-center bg-[var(--color-bg)] shrink-0">
+        <div className="flex items-start gap-5 md:gap-6 flex-1 min-w-0">
+          <div className="hidden md:flex w-10 h-10 rounded-full items-center justify-center bg-[var(--color-bg)] shrink-0 mt-1">
             {icon}
           </div>
-          <div className="text-[var(--color-text-secondary)] font-mono text-sm md:text-base font-medium shrink-0">
+          <div className="text-[var(--color-text-secondary)] font-mono text-sm md:text-base font-medium shrink-0 mt-2">
             {String(idx + 1).padStart(2, "0")}
           </div>
           <div className="flex-1 min-w-0 pr-4">
-            <h4 className="text-base md:text-lg font-bold text-[var(--color-navy)] truncate !mb-0">{obj.title || "Strategic Insight"}</h4>
+            <h4 className="text-base md:text-lg font-bold text-[var(--color-navy)] truncate">{obj.title || "Strategic Insight"}</h4>
             {subtitle && !isExpanded && (
-              <p className="text-sm text-[var(--color-text-secondary)] truncate mt-2 md:mt-3 !mb-0">{cleanText(subtitle)}</p>
+              <p className="text-sm text-[var(--color-text-secondary)] truncate mt-2 md:mt-3">{cleanText(subtitle)}</p>
             )}
           </div>
         </div>
-        <div className="flex items-center gap-4 shrink-0">
+        <div className="flex items-start gap-4 shrink-0 mt-2">
           <span 
             className="hidden md:inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full"
             style={{ color: priorityColor, backgroundColor: priorityBg }}
