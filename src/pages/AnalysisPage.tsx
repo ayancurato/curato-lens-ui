@@ -318,7 +318,7 @@ export function AnalysisPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.08, duration: 0.4 }}
-                      className={`flex flex-row items-center md:items-center gap-4 md:gap-6 py-5 max-sm:py-6 md:py-6 bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 max-sm:p-6 mb-3 max-sm:mb-0 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:px-0 md:mb-0 ${
+                      className={`flex flex-row items-center md:items-center gap-4 md:gap-6 px-5 py-5 md:px-0 md:py-10 bg-white rounded-[20px] shadow-sm border border-gray-100 mb-3 max-sm:mb-0 md:bg-transparent md:rounded-none md:shadow-none md:border-none md:mb-0 ${
                         !isLast ? "md:border-b md:border-gray-50" : ""
                       }`}
                     >
