@@ -129,7 +129,12 @@ export function ReportPage() {
               Score Breakdown
             </motion.h2>
             <div className="flex flex-wrap justify-center gap-8">
-              {scores?.category_scores?.map((cat, i) => {
+              {scores?.category_scores
+                ?.filter((cat) => {
+                  const labelUpper = (cat.category || cat.label || "").toUpperCase();
+                  return !labelUpper.includes("MARKETING") && !labelUpper.includes("SOCIAL");
+                })
+                .map((cat, i) => {
                 let explanation = cat.description;
                 const labelUpper = (cat.category || cat.label || "").toUpperCase();
                 
@@ -137,12 +142,10 @@ export function ReportPage() {
                     if (labelUpper.includes("WEBSITE")) explanation = "Technical foundations, content depth, and user experience.";
                     else if (labelUpper.includes("SEO")) explanation = "Search visibility, structured data, and performance metrics.";
                     else if (labelUpper.includes("BRAND")) explanation = "Brand messaging, trust signals, and market positioning.";
-                    else if (labelUpper.includes("MARKETING")) explanation = "Acquisition strategy, conversion funnels, and CTAs.";
-                    else if (labelUpper.includes("SOCIAL")) explanation = "Social presence, audience engagement, and platform usage.";
                 }
 
                 return (
-                  <div key={cat.category || i} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]">
+                  <div key={cat.category || i} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
                     <ScoreCard 
                       label={cat.category || cat.label || `Category ${i + 1}`} 
                       score={cat.score} 
