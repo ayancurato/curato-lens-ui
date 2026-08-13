@@ -138,9 +138,9 @@ function InsightRow({ obj, idx }: { obj: Insight, idx: number }) {
             {String(idx + 1).padStart(2, "0")}
           </div>
           <div className="flex-1 min-w-0 pr-4">
-            <h4 className="text-base md:text-lg font-bold text-[var(--color-navy)] truncate">{obj.title || "Strategic Insight"}</h4>
+            <h4 className="text-base md:text-lg font-bold text-[var(--color-navy)] truncate !mb-0">{obj.title || "Strategic Insight"}</h4>
             {subtitle && !isExpanded && (
-              <p className="text-sm text-[var(--color-text-secondary)] truncate mt-2 md:mt-3">{cleanText(subtitle)}</p>
+              <p className="text-sm text-[var(--color-text-secondary)] truncate mt-2 md:mt-3 !mb-0">{cleanText(subtitle)}</p>
             )}
           </div>
         </div>
