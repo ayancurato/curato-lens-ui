@@ -108,9 +108,31 @@ export function ScoreCard({ label, score, delay = 0, explanation, confidence }: 
                 <>
                   <div>
                     <h5 className="text-xs font-bold uppercase tracking-widest mb-2 text-[var(--color-text-secondary)]">Reasoning</h5>
-                    <p className="text-[15px] text-[var(--color-navy)] leading-relaxed">
-                      {explanation || "Detailed reasoning is unavailable for this score."}
-                    </p>
+                    <div className="text-[15px] text-[var(--color-navy)] leading-relaxed">
+                      {explanation ? (
+                        Array.isArray(explanation) ? (
+                          <ul className="list-disc pl-5 space-y-2">
+                            {explanation.map((line, idx) => (
+                              <li key={idx}>{String(line).replace(/^[-*]\\s*/, '')}</li>
+                            ))}
+                          </ul>
+                        ) : typeof explanation === 'string' ? (
+                          explanation.split('\\n').filter(line => line.trim()).every(line => line.trim().startsWith('-') || line.trim().startsWith('*')) ? (
+                            <ul className="list-disc pl-5 space-y-2">
+                              {explanation.split('\\n').filter(line => line.trim()).map((line, idx) => (
+                                <li key={idx}>{line.replace(/^[-*]\\s*/, '')}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p>{explanation}</p>
+                          )
+                        ) : (
+                          <p>{String(explanation)}</p>
+                        )
+                      ) : (
+                        <p>Detailed reasoning is unavailable for this score.</p>
+                      )}
+                    </div>
                   </div>
                   
                   {confidence && (
