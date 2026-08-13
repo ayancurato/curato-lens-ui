@@ -322,7 +322,8 @@ export function AnalysisPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.08, duration: 0.4 }}
-                      className="flex flex-row items-center gap-4 md:gap-6 bg-white rounded-[20px] shadow-sm border border-gray-100 p-5 md:p-6"
+                      className="flex flex-row items-center gap-4 md:gap-6 bg-white rounded-[20px] shadow-sm border border-gray-100"
+                      style={{ padding: "24px" }}
                     >
                       {/* Step number (Left) */}
                       <span
@@ -467,8 +468,8 @@ export function AnalysisPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="rounded-[1.25rem] p-5 sm:p-6 flex items-start sm:items-center gap-4 relative overflow-hidden mb-6"
-            style={{ background: "rgba(43, 182, 168, 0.04)" }}
+            className="rounded-[1.25rem] flex items-start sm:items-center gap-4 relative overflow-hidden mb-6"
+            style={{ background: "rgba(43, 182, 168, 0.04)", padding: "24px" }}
           >
             {/* Very subtle dots just for the privacy card */}
             <DotPattern className="-bottom-8 -right-8 opacity-40 scale-75 hidden sm:block text-teal-600/10" />
