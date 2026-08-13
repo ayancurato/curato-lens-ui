@@ -285,7 +285,7 @@ export function AIConsultantInsights({ insights, categoryScores }: AIConsultantI
         </div>
       </div>
       
-      <div className="flex flex-col pt-6 md:pt-8 pb-4 md:pb-6">
+      <div className="flex flex-col pt-12 md:pt-16 pb-4 md:pb-6">
         {normalizedInsights.map((obj, idx) => (
           <InsightRow key={idx} obj={obj} idx={idx} />
         ))}
