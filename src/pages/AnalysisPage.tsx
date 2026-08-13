@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Check, 
-  Loader2, 
-  Circle, 
-  AlertCircle, 
+import {
+  Check,
+  Loader2,
+  Circle,
+  AlertCircle,
   ArrowLeft,
   Globe,
   Radio,
@@ -24,45 +24,45 @@ import { Navbar } from "@/components/layout/Navbar";
 /* ── Pipeline Steps ──────────────────────────────────────────────────── */
 
 const PIPELINE_STEPS = [
-  { 
-    title: "Crawling Website", 
+  {
+    title: "Crawling Website",
     subtitle: "Discovering and scanning all pages on your website",
-    icon: Globe 
+    icon: Globe
   },
-  { 
-    title: "Extracting Brand Signals", 
+  {
+    title: "Extracting Brand Signals",
     subtitle: "Identifying key brand mentions and digital footprint",
-    icon: Radio 
+    icon: Radio
   },
-  { 
-    title: "SEO Analysis", 
+  {
+    title: "SEO Analysis",
     subtitle: "Analyzing on-page, technical SEO and performance",
-    icon: Search 
+    icon: Search
   },
-  { 
-    title: "Social Media Analysis", 
+  {
+    title: "Social Media Analysis",
     subtitle: "Scanning social platforms and engagement metrics",
-    icon: Users 
+    icon: Users
   },
-  { 
-    title: "Content Evaluation", 
+  {
+    title: "Content Evaluation",
     subtitle: "Assessing content quality, relevance and structure",
-    icon: FileText 
+    icon: FileText
   },
-  { 
-    title: "Authority Analysis", 
+  {
+    title: "Authority Analysis",
     subtitle: "Evaluating domain authority and trust signals",
-    icon: Shield 
+    icon: Shield
   },
-  { 
-    title: "Competitor Benchmarking", 
+  {
+    title: "Competitor Benchmarking",
     subtitle: "Comparing performance against key competitors",
-    icon: BarChart 
+    icon: BarChart
   },
-  { 
-    title: "Generating AI Report", 
+  {
+    title: "Generating AI Report",
     subtitle: "Compiling insights and recommendations",
-    icon: FileCheck 
+    icon: FileCheck
   },
 ];
 
@@ -97,15 +97,15 @@ const DotPattern = ({ className }: { className?: string }) => (
 export function AnalysisPage() {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
-  
+
   // Real API hook (disabled if demo mode)
   const { data: realJob, isError: realIsError } = useJobStatus(jobId === "demo" ? null : (jobId ?? null));
 
   // Demo state for UI testing without tokens
-  const [demoJob, setDemoJob] = useState<{ status: string; progress_pct: number; job_id: string; error_message?: string }>({ 
-    status: "running", 
-    progress_pct: 0, 
-    job_id: "demo" 
+  const [demoJob, setDemoJob] = useState<{ status: string; progress_pct: number; job_id: string; error_message?: string }>({
+    status: "running",
+    progress_pct: 0,
+    job_id: "demo"
   });
   useEffect(() => {
     if (jobId === "demo") {
@@ -165,7 +165,7 @@ export function AnalysisPage() {
   const completedSteps = Math.floor((progress / 100) * PIPELINE_STEPS.length);
   const isCompleted = job?.status === "completed";
   const isFailed = job?.status === "failed";
-  
+
   // Safe step counter for display (1 to 8)
   const currentDisplayStep = Math.min(completedSteps + 1, PIPELINE_STEPS.length);
 
@@ -179,7 +179,7 @@ export function AnalysisPage() {
 
       <div className="container-premium relative z-10" style={{ paddingTop: "180px", paddingBottom: "100px" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          
+
           {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -202,7 +202,7 @@ export function AnalysisPage() {
                 ? "Your intelligence report is ready."
                 : isFailed
                   ? job?.error_message || "Something went wrong. Please try again."
-                  : "Sit tight! We're analyzing your digital presence to deliver actionable intelligence."}
+                  : "Sit tight! We're analyzing your digital presence to deliver actionable insights."}
             </p>
           </motion.div>
 
@@ -237,16 +237,16 @@ export function AnalysisPage() {
 
           {/* Progress Summary Card */}
           {!isFailed && !isError && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-[var(--color-border-light)] relative overflow-hidden mb-8"
-              style={{ padding: "24px 24px 36px 24px", marginBottom: "30px" }}
+              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-[var(--color-border-light)] px-5 pt-5 pb-8 md:px-6 md:pt-6 md:pb-10 mb-8 relative overflow-hidden"
+              style={{ marginBottom: "30px" }}
             >
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 relative z-10">
+              <div className="flex items-center gap-5 sm:gap-6 relative z-10">
                 {/* Left: Icon */}
-                <div 
+                <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                   style={{ background: "var(--color-navy)", color: "#fff" }}
                 >
@@ -280,11 +280,11 @@ export function AnalysisPage() {
                   className="h-full relative !m-0"
                   style={{ background: "linear-gradient(90deg, var(--color-teal), #4fd1c5, var(--color-teal))", backgroundSize: "200% 100%" }}
                   initial={{ width: "0%" }}
-                  animate={{ 
+                  animate={{
                     width: `${progress}%`,
                     backgroundPosition: ["100% 0%", "-100% 0%"]
                   }}
-                  transition={{ 
+                  transition={{
                     width: { duration: 0.5, ease: "easeOut" },
                     backgroundPosition: { repeat: Infinity, duration: 2, ease: "linear" }
                   }}
@@ -296,7 +296,7 @@ export function AnalysisPage() {
           )}
 
           {/* Main Timeline Container */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -306,10 +306,10 @@ export function AnalysisPage() {
             <div className="relative">
               {/* Vertical Connecting Line */}
               {/* 24px (num) + 24px (gap) + 28px (half icon) = 76px (4.75rem) from left */}
-              <div 
-                className="absolute top-8 bottom-8 left-[4.75rem] w-px bg-gray-200 hidden sm:block z-0" 
+              <div
+                className="absolute top-8 bottom-8 left-[4.75rem] w-px bg-gray-200 hidden sm:block z-0"
               />
-              
+
               <div className="flex flex-col gap-4 md:gap-6 relative z-10 max-sm:mt-8">
                 {PIPELINE_STEPS.map((step, i) => {
                   const isDone = isCompleted || i < completedSteps;
@@ -335,12 +335,12 @@ export function AnalysisPage() {
                       {/* Circular Icon */}
                       <div className="flex-shrink-0 relative z-10 bg-white">
                         {isActive && (
-                           <motion.div 
-                             className="absolute inset-0 rounded-full"
-                             style={{ border: "2px solid var(--color-teal)" }}
-                             animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                           />
+                          <motion.div
+                            className="absolute inset-0 rounded-full"
+                            style={{ border: "2px solid var(--color-teal)" }}
+                            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+                            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                          />
                         )}
                         <div
                           className="w-16 h-16 rounded-full flex items-center justify-center border transition-colors duration-300 relative z-10"
@@ -349,10 +349,10 @@ export function AnalysisPage() {
                             background: isActive || isDone ? "rgba(43, 182, 168, 0.08)" : "#F8FAFC",
                           }}
                         >
-                          <StepIcon 
+                          <StepIcon
                             strokeWidth={isActive || isDone ? 2.5 : 2}
-                            className="w-7 h-7" 
-                            style={{ color: isActive || isDone ? "var(--color-teal)" : "#94a3b8" }} 
+                            className="w-7 h-7"
+                            style={{ color: isActive || isDone ? "var(--color-teal)" : "#94a3b8" }}
                           />
                         </div>
                       </div>
@@ -360,7 +360,7 @@ export function AnalysisPage() {
                       {/* Content: Title & Subtitle */}
                       <div className="flex-grow min-w-0 flex flex-col md:flex-row md:items-center">
                         <div className="flex-grow min-w-0 pr-0 md:pr-4 pt-1 md:pt-0">
-                          <h4 
+                          <h4
                             className="text-base font-semibold !mb-1 md:!mb-2"
                             style={{ color: isActive || isDone ? "var(--color-navy)" : "#475569", marginBottom: 6 }}
                           >
@@ -369,12 +369,12 @@ export function AnalysisPage() {
                           <p className="text-[15px] text-gray-500/90 font-medium leading-relaxed !mb-0" style={{ marginBottom: 0 }}>
                             {step.subtitle}
                           </p>
-                          
+
                           {/* Status Pill & Indicator (MOBILE ONLY) */}
                           <div className="flex items-center gap-5 mt-3 md:hidden">
                             {isDone ? (
                               <>
-                                <div 
+                                <div
                                   className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold bg-gray-50/80"
                                   style={{ color: "#64748b" }}
                                 >
@@ -384,7 +384,7 @@ export function AnalysisPage() {
                               </>
                             ) : isActive ? (
                               <>
-                                <div 
+                                <div
                                   className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
                                   style={{ background: "rgba(43, 182, 168, 0.12)", color: "var(--color-teal-dark)" }}
                                 >
@@ -399,7 +399,7 @@ export function AnalysisPage() {
                               </>
                             ) : (
                               <>
-                                <div 
+                                <div
                                   className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
                                   style={{ background: "#F1F5F9", color: "#94a3b8" }}
                                 >
@@ -417,7 +417,7 @@ export function AnalysisPage() {
                         <div className="hidden md:flex items-center gap-5 flex-shrink-0 mt-3 md:mt-0">
                           {isDone ? (
                             <>
-                              <div 
+                              <div
                                 className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold bg-gray-50/80"
                                 style={{ color: "#64748b" }}
                               >
@@ -427,7 +427,7 @@ export function AnalysisPage() {
                             </>
                           ) : isActive ? (
                             <>
-                              <div 
+                              <div
                                 className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
                                 style={{ background: "rgba(43, 182, 168, 0.12)", color: "var(--color-teal-dark)" }}
                               >
@@ -442,7 +442,7 @@ export function AnalysisPage() {
                             </>
                           ) : (
                             <>
-                              <div 
+                              <div
                                 className="px-3.5 py-1.5 rounded-full text-[0.75rem] font-semibold"
                                 style={{ background: "#F1F5F9", color: "#94a3b8" }}
                               >
@@ -463,7 +463,7 @@ export function AnalysisPage() {
           </motion.div>
 
           {/* Privacy Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -472,8 +472,8 @@ export function AnalysisPage() {
           >
             {/* Very subtle dots just for the privacy card */}
             <DotPattern className="-bottom-8 -right-8 opacity-40 scale-75 hidden sm:block text-teal-600/10" />
-            
-            <div 
+
+            <div
               className="w-10 h-10 rounded-full flex flex-shrink-0 items-center justify-center bg-white shadow-sm border border-gray-100"
             >
               <Lock className="w-4 h-4" style={{ color: "var(--color-teal)" }} />
@@ -487,7 +487,7 @@ export function AnalysisPage() {
               </p>
             </div>
           </motion.div>
-          
+
         </div>
       </div>
     </div>
