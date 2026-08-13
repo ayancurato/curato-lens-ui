@@ -37,7 +37,7 @@ export function ExecutiveSummary({ text, strengths, weaknesses, overallScore }: 
           Overall Assessment
         </h3>
         <div className="flex items-center gap-3">
-          <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-navy)]">
+          <h2 className="text-3xl md:text-4xl font-serif text-[var(--color-navy)] !m-0">
             Brand Health
           </h2>
           <span 
