@@ -133,7 +133,7 @@ export function ReportPage() {
                 let explanation = cat.description;
                 const labelUpper = (cat.category || cat.label || "").toUpperCase();
                 
-                if (!explanation || explanation.trim() === "") {
+                if (!explanation || (typeof explanation === 'string' && explanation.trim() === "") || (Array.isArray(explanation) && explanation.length === 0)) {
                     if (labelUpper.includes("WEBSITE")) explanation = "Technical foundations, content depth, and user experience.";
                     else if (labelUpper.includes("SEO")) explanation = "Search visibility, structured data, and performance metrics.";
                     else if (labelUpper.includes("BRAND")) explanation = "Brand messaging, trust signals, and market positioning.";
