@@ -31,7 +31,7 @@ export function ExecutiveSummary({ text, strengths, weaknesses, overallScore }: 
   const health = getHealthStatus(overallScore);
 
   return (
-    <div className="bg-white rounded-[24px] shadow-[var(--shadow-card)] border border-[var(--color-border-light)] px-6 md:px-8 pt-8 md:pt-10 pb-8 md:pb-10">
+    <div className="bg-white rounded-[24px] shadow-[var(--shadow-card)] border border-[var(--color-border-light)]" style={{ padding: "40px" }}>
       <div className="mb-5 md:mb-6">
         <h3 className="text-xs font-bold uppercase tracking-widest mb-3 max-sm:mb-6 md:mb-4" style={{ color: "var(--color-teal)" }}>
           Overall Assessment
