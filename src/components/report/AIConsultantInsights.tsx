@@ -165,35 +165,35 @@ function InsightRow({ obj, idx }: { obj: Insight, idx: number }) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="p-6 md:p-8 md:pl-[104px] border-t border-[var(--color-border-light)] bg-[#fafafa]/30">
-              <div className="space-y-6 max-w-3xl">
+            <div className="border-t border-[var(--color-border-light)] bg-[#fafafa]/30" style={{ padding: "32px", paddingLeft: "clamp(32px, 15vw, 104px)" }}>
+              <div className="max-w-3xl">
                 {evidenceContent && (
-                  <div>
-                    <h5 className="text-xs font-bold uppercase tracking-widest mb-3 text-[var(--color-text-secondary)]">EVIDENCE</h5>
+                  <div style={{ marginBottom: "24px" }}>
+                    <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--color-text-secondary)]" style={{ marginBottom: "12px" }}>EVIDENCE</h5>
                     <div className="text-[15px] leading-relaxed text-[var(--color-text)]">
                       {evidenceContent}
                     </div>
                   </div>
                 )}
                 {findingContent && (
-                  <div>
-                    <h5 className="text-xs font-bold uppercase tracking-widest mb-3 text-[var(--color-text-secondary)]">WHAT WE FOUND</h5>
+                  <div style={{ marginBottom: "24px" }}>
+                    <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--color-text-secondary)]" style={{ marginBottom: "12px" }}>WHAT WE FOUND</h5>
                     <div className="text-[15px] leading-relaxed text-[var(--color-text)]">
                       {findingContent}
                     </div>
                   </div>
                 )}
                 {impactContent && (
-                  <div>
-                    <h5 className="text-xs font-bold uppercase tracking-widest mb-3 text-[var(--color-text-secondary)]">WHY IT MATTERS</h5>
+                  <div style={{ marginBottom: "24px" }}>
+                    <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--color-text-secondary)]" style={{ marginBottom: "12px" }}>WHY IT MATTERS</h5>
                     <div className="text-[15px] leading-relaxed text-[var(--color-text)]">
                       {impactContent}
                     </div>
                   </div>
                 )}
                 {recContent && (
-                  <div className="p-5 rounded-[12px] mt-2 border border-[rgba(43,182,168,0.2)]" style={{ background: "rgba(43, 182, 168, 0.04)" }}>
-                    <h5 className="text-xs font-bold uppercase tracking-widest mb-3 text-[var(--color-teal-dark)]">WHAT TO DO</h5>
+                  <div className="rounded-[12px] mt-2 border border-[rgba(43,182,168,0.2)]" style={{ padding: "20px", background: "rgba(43, 182, 168, 0.04)" }}>
+                    <h5 className="text-xs font-bold uppercase tracking-widest text-[var(--color-teal-dark)]" style={{ marginBottom: "12px" }}>WHAT TO DO</h5>
                     <div className="text-[15px] leading-relaxed font-medium text-[var(--color-navy)]">
                       {recContent}
                     </div>
