@@ -217,7 +217,8 @@ export function AnalysisPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 mb-12 md:mb-16 max-sm:pb-8 max-sm:mb-12 relative overflow-hidden"
+              className="bg-white rounded-[20px] md:rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8 max-sm:pb-8 relative overflow-hidden"
+              style={{ marginBottom: "30px" }}
             >
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 relative z-10">
                 {/* Left: Icon */}
